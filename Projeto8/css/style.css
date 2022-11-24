@@ -1,0 +1,77 @@
+body {
+    background-color: rgb(173, 211, 225);
+    width: 100%;
+    margin: 0 auto;
+    font-size: 16px;
+    text-align: center;
+}
+
+.CCCreate{
+    background-image:  url('../imgs/cc.png') ;
+    height: 559px;
+    width: 890px;
+    position:fixed;
+}
+
+.CCCreate input{
+    position:absolute;
+    background-color: transparent;
+    color: black;
+    border: none;
+    font-size: 18px;
+}
+
+.apelido{
+    top: 90px;
+    left: 170px;
+    width: 310px;
+}
+.name{
+    top: 145px;
+    left: 170px;
+    width: 158px;
+}
+.sexo{
+    top: 205px;
+    left: 170px;
+    width: 20px;
+}
+.height{
+    top: 205px;
+    left: 201px;
+    width: 40px;
+}
+.nacionalidade{
+    top: 205px;
+    left: 270px;
+    width: 40px;
+}
+.datanasc{
+    top: 205px;
+    left: 345px;
+    width: 130px;
+}
+.nid{
+    top: 265px;
+    left: 170px;
+    width: 138px;
+}
+.ndoc{
+    top: 265px;
+    left: 289px;
+    width: 40px;
+}
+.dataval{
+    top: 265px;
+    left: 345px;
+    width: 130px;
+}
+
+
+.Disabel{
+    display: none;
+}
+
+.Enable{
+    display: block;
+}
