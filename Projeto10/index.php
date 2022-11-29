@@ -7,7 +7,7 @@
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <title>Criar CC</title>
+    <title>Matrículas</title>
     <link rel="stylesheet" href="css/style.css">
     <script src='js/codigo.js'></script>
     
@@ -15,41 +15,57 @@
 <body>
 
 <form class="Form" action="./php/CreateCC.php" method="post" enctype="multipart/form-data">
-    <h1>Introduza os dados do seu CC</h1>
-
-    <label for="">Apelido:</label>
-    <input type="text" name="CCDados[apelido]" value="" required><br><br>
-    <label for="">Nome:</label>
-    <input type="text" name="CCDados[name]" value=""required><br><br>
-    <label for="">Sexo: <br>
-        Homen: <input type="radio" name="CCDados[sexo]" value="H" checked > <br/> 
-        Mulher: <input type="radio" name="CCDados[sexo]" value="M"> <br/> 
+    <h1>Introduza os dados para Matrícular o aluno</h1>
+    
+    <label class="name" for="">Nome do aluno: 
+        <input class="input" type="text" name="matricula[name]" value="" required>
     </label><br>
-    <label for="">Altura:</label>
-    <input type="number" step="0.01" min='0.01'name="CCDados[height]" value="" required><br><br>
-    <label for="">Nacionalidade: <br>
-        Português: <input type="radio" name="CCDados[nacionalidade]" value="PRT" checked> <br/> 
+    
+    <label class="Genero" for="">Género/Sexo: <br>
+        Homen: <input type="radio" name="matricula[sexo]" value="H" checked> <br>
+        Mulher: <input type="radio" name="matricula[sexo]" value="M"> 
+    </label><br>    
+    
+    <label class="ano" for="">Seleciona o Ano letivo:
+        <select name="matricula[AnoLetivo]" id="" required>
+            <option value="" selected></option>
+            <option value="10">10º</option>
+            <option value="11">11º</option>
+            <option value="12">12º</option>
+        </select><br>
+    </label>
+      
+    <label class="disciplinas" for="">Disciplinas: <br>
+        <div class="Col1">
+            <div>Português: <input type="checkbox" name="disciplinas[]"></div>
+            <div>Linguas Estrangeiras: <input type="checkbox" name="disciplinas[]"></div>
+            <div>Filosofia: <input type="checkbox" name="disciplinas[]"></div>
+            <div>Educação Física: <input type="checkbox" name="disciplinas[]"><br></div>
+        </div>
+        <div class="Col2">
+            <div>Matemática A:<input type="checkbox" name="disciplinas[]"></div>
+            <div>Física e Química A:<input type="checkbox" name="disciplinas[]"></div>
+            <div>Moral, Ética e Deontologia:<input type="checkbox" name="disciplinas[]"></div>
+            <div>Aplicações Informáticas:<input type="checkbox" name="disciplinas[]"></div>   
+        </div>
+        <div class="Col3">
+            <div>Fundamento e Arquitetura de computadores: <input type="checkbox" name="disciplinas[]"></div>
+            <div>Técnicas de Programação:<input type="checkbox" name="disciplinas[]"></div>
+            <div>Implementação e Exploração de Bases de Dados<input type="checkbox" name="disciplinas[]"></div>
+            <div>Tecnologias e Desenvolvimento Multimédia:<input type="checkbox" name="disciplinas[]"></div>
+        </div>
+        <div class="Col3">
+            <div>Programação Internet:<input type="checkbox" name="disciplinas[]"></div>
+            <div>Projeto Tecnológico<input type="checkbox" name="disciplinas[]"></div>
+            <div>Formação contexto de trabalho<input type="checkbox" name="disciplinas[]"></div>
+        </div>
     </label><br>
-    <label for="">Data de Nascimento:</label>
-    <input type="date" name="CCDados[datanasc]" value="" required><br><br>
-    <?php 
-        if(isset($_GET['ERRO']))
-        {
-            echo 'A data introduzida não é válida. <br> <br>';
-        }
-    ?>
-    <label for="">Numero de identificação civil:</label>
-    <input type="number" name="CCDados[nid]" min="0"  value="" max="99999999" required><br><br>
-    <label for="">Numero do documento:</label>
-    <input type="text" name="CCDados[ndoc]" value="" maxlength="5" required><br><br>
-    <label for="">Data de validação:</label>
-    <input type="date" name="CCDados[dataval]" value="" required><br><br>
-    <label for="">Foto:</label>
-    <input type="file" name="Foto" required ><br><br>
-    <label for="">Assinatura:</label>
-    <input type="file" name="Assinatura" required><br><br>
 
-    <input type="submit">
+    <label class="foto" for="">Foto:
+        <input type="file" name="Foto" required>
+    </label> <br>
+
+    <input class="submit" type="submit">
 </form><br>
 
 </body>

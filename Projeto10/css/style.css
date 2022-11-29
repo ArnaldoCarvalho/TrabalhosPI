@@ -6,92 +6,77 @@ body {
     text-align: center;
 }
 
-.CCCreate{
-    background-image:  url('../imgs/cc.png') ;
-    height: 378px;
-    width: 760px;
+.Form{
+    height: 100%;
+    width: 100%;
     position:fixed;
 }
 
-.CCCreate input{
+.Form input,.Form label,.Form select{
     position:absolute;
-    background-color: transparent;
-    color: black;
-    border: none;
-    font-size: 18px;
-}
-.CCCreate img{
-    position:absolute;
-    background-color: transparent;
     color: black;
     border: none;
     font-size: 18px;
 }
 
-.apelido{
-    top: 90px;
-    left: 170px;
-    width: 310px;
+
+.input{
+    width: 150px;
 }
 .name{
-    top: 145px;
-    left: 170px;
-    width: 158px;
-}
-.sexo{
-    top: 205px;
-    left: 170px;
-    width: 20px;
-}
-.height{
-    top: 205px;
-    left: 201px;
-    width: 40px;
-}
-.nacionalidade{
-    top: 205px;
-    left: 270px;
-    width: 40px;
-}
-.datanasc{
-    top: 205px;
-    left: 345px;
-    width: 130px;
-}
-.nid{
-    top: 265px;
-    left: 170px;
-    width: 138px;
-}
-.ndoc{
-    top: 265px;
-    left: 289px;
-    width: 40px;
-}
-.dataval{
-    top: 265px;
-    left: 345px;
-    width: 130px;
+    top: 15%;
+    left: 30%;
 }
 
-.assinatura{
-    top: 316px;
-    left: 170px;
-    width: 260px;
-    height: 52px;
+.Genero{
+    top: 20%;
+    left: 30%;
 }
+
+
+
+.ano{
+    top: 31%;
+    left: 30%; 
+}
+
+.disciplinas{
+    top: 36%;
+    left: 30%;
+}
+
+.disciplinas div{
+    position: fixed;
+}
+.disciplinas div div{
+    text-align: left;
+    position: relative;
+    width: 220px;
+    margin: 0;
+}
+
+.Col2{
+    left: 45%;
+}
+.Col3{
+    left: 60%;
+}
+
 
 .foto{
-    top: 183px;
-    left: 452px;
-    width: 140px;
-    height: 185px;
+    top: 51%;
+    left: 30%;
 }
 
-.Disabel{
-    display: none;
+.foto input{
+    font-size: 17px;
 }
 
-.Enable{
-    display: block;
+.submit{
+    top: 60%;
 }
+
+
+
+
+
