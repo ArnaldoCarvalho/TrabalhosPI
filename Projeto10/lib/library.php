@@ -1,5 +1,5 @@
 <?php
-
+@session_start();
 function index($array){
     $key=array(count($array));  
     $i = 0;
@@ -13,7 +13,7 @@ function index($array){
 }
 
 
-function VerificaVazio($array,$Ncampos,$location = null){ 
+function VerificaVazio($array,$Ncampos = null,$location = null){ 
     $Ncampos = $Ncampos == null ? count($array) :$Ncampos;
     $location = $location == null ? 'Location: ../index.php' : 'Location: '.$location;
     $key=index($array);
@@ -32,7 +32,6 @@ function VerificaVazio($array,$Ncampos,$location = null){
     }
 
 }
-
 
 
 function pr($arr)
@@ -63,3 +62,61 @@ function uploadFile($file, $nomeFicheiro = null, $nomePasta = null, $tamUpload =
     return  $nomeFicheiro;
 }
 
+
+function disciplinas($array){
+    $arrayName = array(
+        'PT' => 'Português', 
+        'LE' => 'Linguas Estrangeiras', 
+        'Filo' => 'Filosofia', 
+        'EF' => 'Educação Física', 
+        'MA' => 'Matemática', 
+        'FQ' => 'Física Química', 
+        'MED' => 'Moral Ética Deontologia', 
+        'AI' => 'Aplicações Informáticas', 
+        'FAC' => 'Fundamento e Arquitetura de computadores', 
+        'TP' => 'Tecnicas de Programação', 
+        'IEBD' => 'Inplementação e Exploração de Bases de dasos', 
+        'TDM' => 'Tecnologias e Desenvolvimento Multimédia', 
+        'PI' => 'Programação Internet', 
+        'ProjectT' => 'Projeto Tecnológico', 
+        'FCT' => 'Formação contexto de trabalho', 
+    );
+
+    pr($array);
+    pr($arrayName);
+
+    $text="";
+    $text="<div>";
+    $indexArrayName=index($arrayName);
+    $indexArray = index($array);
+    for ($i=0; $i < count($indexArray); $i++) { 
+        for ($j=0; $j < count($indexArrayName) ; $j++) { 
+            if ($indexArrayName[$j]===$indexArray[$i]) {
+                $text = $text." <div> ->". $arrayName[$indexArrayName[$j]] ." </div>";                
+            }
+        }
+    }
+    $text=$text."</div>";
+    pr($text);
+
+    return $text;
+}
+
+
+function CopySession($array,$vet=null){
+    
+    $vet = $vet == null ? "" : $vet;
+    $index=index($array);
+    if($vet === ""){
+        for ($i=0; $i <count($array) ; $i++) {
+            $_SESSION[$index[$i]] = $array[$index[$i]];
+        }
+    }
+    else{
+        for ($i=0; $i <count($array) ; $i++) {
+            $_SESSION["$vet"][$index[$i]] = $array[$index[$i]];
+        }
+    }
+    
+
+}

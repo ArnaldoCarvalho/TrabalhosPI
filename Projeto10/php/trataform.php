@@ -3,34 +3,30 @@ session_start();
 
 include '../lib/library.php';
 
-$typedados = index($_POST['CCDados']);
-$filedados = index($_FILES);
 
-//print_r($typedados);
-//die;
-                                                        
-$CCDados = $_POST['CCDados'];
 
-if($CCDados['datanasc']>=$CCDados['dataval']){
-    header('Location:'.'../index.php?ERRO=1');
-    exit(); 
+if (isset($_POST['disciplinas'])) {
+
+    VerificaVazio($_POST['matricula'],3);
+    
+    CopySession($_POST['matricula']);
+    CopySession($_POST['disciplinas']);
+    $_SESSION['observ'] = $_POST['observ'];
+    
+    $TextDis = "";
+    $TextDis = disciplinas($_POST['disciplinas']);
+    $_SESSION['text'] = $TextDis;
+    $filedados = uploadFile($_FILES['Foto']);
+    //pr($filedados);
+    //pr($_FILES);
+    $_SESSION['Foto']=$filedados;
+    $disciplinas = $_POST['disciplinas'];
+
+    header('Location:' . '../matrícula.php');
+    exit();
+} else {
+    header('Location:' . '../index.php');
+    exit();
 }
-
-VerificaVazio($_POST['CCDados'],9);
-GerarCC($typedados,$CCDados,$filedados,$img);
-header('Location:'.'../CCcreate.php');
-exit();
-
-function GerarCC($typedados,$CCDados,$filedados,$img){
-   for($i=0;$i<count($typedados);$i++){
-    $_SESSION[$typedados[$i]]=$CCDados[$typedados[$i]];
-   }
-
-   for($i=0;$i<count($filedados);$i++){
-    $_SESSION[$filedados[$i]]=uploadFile($_FILES[$filedados[$i]]);
-   }
-}
-
-
 
 ?>

@@ -3,78 +3,50 @@ body {
     width: 100%;
     margin: 0 auto;
     font-size: 16px;
-    text-align: center;
+    align-items: center;
+    
 }
 
 .Form{
-    height: 100%;
-    width: 100%;
-    position:fixed;
+    text-align: center;
+    margin: 0 2%;
+    width: 50%;
+    background-color:antiquewhite;
+    border: 2px black solid;
 }
 
 .Form input,.Form label,.Form select{
-    position:absolute;
     color: black;
     border: none;
     font-size: 18px;
 }
 
+.Form img {
+    width: 50%;
+}
+.disciplinas div{
+    text-align: center;
+}
 
 .input{
-    width: 150px;
-}
-.name{
-    top: 15%;
-    left: 30%;
-}
-
-.Genero{
-    top: 20%;
-    left: 30%;
+    width: 90%;
+    max-width: 210px;
 }
 
 
-
-.ano{
-    top: 31%;
-    left: 30%; 
-}
-
-.disciplinas{
-    top: 36%;
-    left: 30%;
-}
-
-.disciplinas div{
-    position: fixed;
-}
-.disciplinas div div{
-    text-align: left;
-    position: relative;
-    width: 220px;
-    margin: 0;
-}
-
-.Col2{
-    left: 45%;
-}
-.Col3{
-    left: 60%;
-}
-
-
-.foto{
-    top: 51%;
-    left: 30%;
+.ano select{
+    width: 40px;
 }
 
 .foto input{
-    font-size: 17px;
+    width: 150px;
 }
 
-.submit{
-    top: 60%;
+.caixa{
+    width: 70%;
 }
+
+
 
 
 
