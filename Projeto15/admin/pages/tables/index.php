@@ -61,7 +61,7 @@ include('../../includes/config.inc.php');
                         foreach($res as $k=>$v) {
                             //$flagUser = false;
                             $linkEditar = $arrConfig['url_admin'].'/pages/editar.php?id='.$v['id'];
-                            $linkEliminar = 'eliminar.php?id='.$v['id'];
+                            $linkEliminar = $arrConfig['url_admin'].'/pages/eliminar.php?id='.$v['id'];
                             if($v['id'] == $_SESSION['uid']) {
                                 //$flagUser = true;
                                 $linkEliminar = '#';

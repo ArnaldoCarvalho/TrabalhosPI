@@ -37,7 +37,7 @@ include('../includes/config.inc.php');
     <?php
     // obter os dados do user a editar
     $id = $_GET['id'];
-    $sql = "SELECT * FROM administradores WHERE id = '$id'";
+    $sql = "SELECT * FROM user WHERE id = '$id'";
     $res = my_query($sql);
     if(count(value: $res)) {
         $nome = $res[0]['nome'];
@@ -47,6 +47,8 @@ include('../includes/config.inc.php');
     } else {
         die("ERRO na query!");
     }
+
+    foreach ($res as $key => $value) {
     ?>
 
         <!-- partial -->
@@ -60,26 +62,19 @@ include('../includes/config.inc.php');
                     <form class="forms-sample">
                       <div class="form-group">
                         <label for="exampleInputName1">Name</label>
-                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Name">
+                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Name" value="<?php echo($value['nome']) ?>">
                       </div>
                       <div class="form-group">
                         <label for="exampleInputName1">Username</label>
-                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Name">
+                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Name" value="<?php echo($value['username']) ?>">
                       </div>
                       <div class="form-group">
                         <label for="exampleInputEmail3">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email">
+                        <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email" value="<?php echo($value['email']) ?>">
                       </div>
                       <div class="form-group">
                         <label for="exampleInputPassword4">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword4" placeholder="Password">
-                      </div>
-                      <div class="form-group">
-                        <label for="exampleSelectGender">Gender</label>
-                        <select class="form-control" id="exampleSelectGender">
-                          <option>Male</option>
-                          <option>Female</option>
-                        </select>
+                        <input type="password" class="form-control" id="exampleInputPassword4" placeholder="Password" value="<?php echo($value['pass']) ?>">
                       </div>
                       <div class="form-group">
                         <label>File upload</label>
@@ -91,17 +86,12 @@ include('../includes/config.inc.php');
                           </span>
                         </div>
                       </div>
-                      <div class="form-group">
-                        <label for="exampleInputCity1">City</label>
-                        <input type="text" class="form-control" id="exampleInputCity1" placeholder="Location">
-                      </div>
-                      <div class="form-group">
-                        <label for="exampleTextarea1">Textarea</label>
-                        <textarea class="form-control" id="exampleTextarea1" rows="4"></textarea>
-                      </div>
-                      <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                      <button class="btn btn-light">Cancel</button>
+                      <input type="submit" class="btn btn-primary mr-2" value="Submit">
                     </form>
+                    <input type="button" class="btn btn-light" value="Cancel" onclick="<?php ?>">
+                    <?php
+   }
+  ?>
                   </div>
                 </div>
               </div>
@@ -132,4 +122,5 @@ include('../includes/config.inc.php');
     <script src="../../assets/js/select2.js"></script>
     <!-- End custom js for this page -->
   </body>
+
 </html>
