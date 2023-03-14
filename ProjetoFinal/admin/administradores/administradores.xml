@@ -1,0 +1,33 @@
+<listaDados>
+    <tabela>administradores</tabela>
+    <campos>
+        <campo>
+            <nome>id</nome>
+            <label>ID</label>
+            <tipo>textbox</tipo>
+            <chave>1</chave>
+        </campo>
+        <campo>
+            <nome>nome</nome>
+            <label>Nome</label>
+            <tipo>textbox</tipo>
+        </campo>
+        <campo>
+            <nome>username</nome>
+            <label>Username</label>
+            <tipo>textbox</tipo>
+        </campo>
+        <campo>
+            <nome>password</nome>
+            <label>Password</label>
+            <tipo>password</tipo>
+            <notlist>1</notlist>
+        </campo>
+        <campo>
+            <nome>ativo</nome>
+            <label>Ativo</label>
+            <tipo>checkbox</tipo>
+            <defeito>1</defeito>
+        </campo>
+    </campos>
+</listaDados>
