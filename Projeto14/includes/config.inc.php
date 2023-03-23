@@ -20,7 +20,7 @@ $arrConfig['dbname'] = 'backoffice';
 $arrConfig['isLoginKey'] = 'sdjfhsdfkjhdsfkjdshfks';
 
 // acessos FrontOffice
-$arrConfig['url_site']='http://localhost/GitHub/projeto14';
+$arrConfig['url_site']='http://localhost/GitHub/Projeto14';
 $arrConfig['dir_site']='C:/xampp/htdocs/GitHub/Projeto14';
 
 // acessos BackOffice

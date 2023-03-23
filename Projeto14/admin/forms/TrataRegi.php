@@ -3,7 +3,7 @@ include('../includes/config.inc.php');
 @session_start();
 
 
-$sql = "SELECT * FROM user WHERE email = '".$_POST['email']."'";
+$sql = "SELECT * FROM administradores WHERE email = '".$_POST['email']."'";
 $results = my_query($sql);
 $pass = $_POST['pass'];
 
@@ -20,7 +20,7 @@ $_SESSION['user'] = $_POST['email'];
 $_SESSION['pass'] = $_POST['pass'];
 $_SESSION['auth'] = '1';
 
-header('Location: ' . $arrConfig['url_amin'] . '/index.php');
+header('Location: ' . $arrConfig['url_admin'] . '/index.php');
 
 
 

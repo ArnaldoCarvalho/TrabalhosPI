@@ -2,7 +2,7 @@
 include('../includes/config.inc.php');
 @session_start();
 
-$sql = "SELECT * FROM user WHERE email = '".$_POST['email']."' and ativo = 1" ;
+$sql = "SELECT * FROM administradores WHERE email = '".$_POST['email']."' and ativo = 1" ;
 $results = my_query($sql);
 
 if(count($results)==0){
