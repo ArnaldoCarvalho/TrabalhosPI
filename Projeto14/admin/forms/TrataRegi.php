@@ -12,7 +12,7 @@ if(count($results)!=0){
 }
 
 $pass = password_hash($pass,PASSWORD_DEFAULT);
-$sql = "INSERT INTO user (nome, email, pass, ativo) VALUES ('".$_POST['nome']."','".$_POST['email']."','".$pass."', '1') ";
+$sql = "INSERT INTO administradores (nome, email, pass, ativo) VALUES ('".$_POST['nome']."','".$_POST['email']."','".$pass."', '1') ";
 my_query($sql);
 
 $_SESSION['nome'] = $_POST['nome'];

@@ -1,6 +1,5 @@
 <?php
 include '../../include/config.inc.php';
-include $arrConfig['dir_site'].'/include/auth.inc.php';
 
 /*
 $xmlString = file_get_contents($arrConfig['url_admin'].'/administradores/administradores.xml');
@@ -68,7 +67,7 @@ pr($array);
                             $flagMostraCampo = 0;
                         }
                     }
-                    if($flagMostraCampo) {
+                    if($flagMostraCampo == 1) {
                         echo '<td>'.$v[$key2].'</td>';
                     }
                 }

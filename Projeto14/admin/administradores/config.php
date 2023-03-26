@@ -15,11 +15,11 @@ $arrDados = array(
                 'legenda' => 'Nome',
                 'tipo' => 'textbox'
             ),
-            'username' => array (
-                'legenda' => 'username',
+            'email' => array (
+                'legenda' => 'Email',
                 'tipo' => 'textarea'
             ),
-            'password' => array (
+            'pass' => array (
                 'legenda' => 'Palavra-passe',
                 'tipo' => 'password',
                 'listagem' => 0,
