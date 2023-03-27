@@ -1,9 +1,10 @@
+<?php include('C:/xampp/htdocs/TrabalhosPi/Projeto14/admin/includes/config.inc.php');?>
 
       <!-- partial:partials/_navbar.html -->
       <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-          <a class="navbar-brand brand-logo" href="index.php"><img src="<?php echo $arrConfig['url_admin'];?>/assets/images/logo.svg" alt="logo" /></a>
-          <a class="navbar-brand brand-logo-mini" href="index.php"><img src="<?php echo $arrConfig['url_admin'];?>/assets/images/logo-mini.svg" alt="logo" /></a>
+          <a class="navbar-brand brand-logo" href="index.php"><img src=<?php echo $arrConfig['url_admin']."/assets/images/logo.svg"?> alt="logo" /></a>
+          <a class="navbar-brand brand-logo-mini" href="index.php"><img src=<?php echo $arrConfig['url_admin']."/assets/images/logo-mini.svg"?> alt="logo" /></a>
         </div>
         <div class="navbar-menu-wrapper d-flex align-items-stretch">
           <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -75,29 +76,29 @@
             <li class="nav-item nav-profile dropdown">
               <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
                 <div class="nav-profile-img">
-                  <img src="<?php echo $arrConfig['url_admin'];?>/assets/images/faces/face28.png" alt="image">
+                  <img src=<?php echo $arrConfig['url_admin']."/assets/images/faces/face28.png"?> alt="image">
                 </div>
                 <div class="nav-profile-text">
-                  <p class="mb-1 text-black"><?php echo $_SESSION['username'] ?></p>
+                  <p class="mb-1 text-black"><?php echo $_SESSION['nome'] ?></p>
                 </div>
               </a>
               <div class="dropdown-menu navbar-dropdown dropdown-menu-right p-0 border-0 font-size-sm" aria-labelledby="profileDropdown" data-x-placement="bottom-end">
                 <div class="p-3 text-center bg-primary">
-                  <img class="img-avatar img-avatar48 img-avatar-thumb" src="<?php echo $arrConfig['url_admin'];?>/assets/images/faces/face28.png" alt="">
+                  <img class="img-avatar img-avatar48 img-avatar-thumb" src=<?php echo $arrConfig['url_admin']."/assets/images/faces/face28.png"?> alt="">
                 </div>
                 <div class="p-2">
                   <h5 class="dropdown-header text-uppercase pl-2 text-dark">User Options</h5>
                   <a class="dropdown-item py-1 d-flex align-items-center justify-content-between" href="#">
                     <span>Inbox</span>
                     <span class="p-0">
-                      <span class="badge badge-primary">3</span>
+                      <span class="badge badge-primary">0</span>
                       <i class="mdi mdi-email-open-outline ml-1"></i>
                     </span>
                   </a>
                   <a class="dropdown-item py-1 d-flex align-items-center justify-content-between" href="#">
                     <span>Profile</span>
                     <span class="p-0">
-                      <span class="badge badge-success">1</span>
+                      <span class="badge badge-success">0</span>
                       <i class="mdi mdi-account-outline ml-1"></i>
                     </span>
                   </a>
@@ -126,37 +127,8 @@
               <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="messageDropdown">
                 <h6 class="p-3 mb-0 bg-primary text-white py-4">Messages</h6>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <img src="assets/images/faces/face4.jpg" alt="image" class="profile-pic">
-                  </div>
-                  <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
-                    <h6 class="preview-subject ellipsis mb-1 font-weight-normal">Mark send you a message</h6>
-                    <p class="text-gray mb-0"> 1 Minutes ago </p>
-                  </div>
-                </a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <img src="assets/images/faces/face2.jpg" alt="image" class="profile-pic">
-                  </div>
-                  <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
-                    <h6 class="preview-subject ellipsis mb-1 font-weight-normal">Cregh send you a message</h6>
-                    <p class="text-gray mb-0"> 15 Minutes ago </p>
-                  </div>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <img src="assets/images/faces/face3.jpg" alt="image" class="profile-pic">
-                  </div>
-                  <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
-                    <h6 class="preview-subject ellipsis mb-1 font-weight-normal">Profile picture updated</h6>
-                    <p class="text-gray mb-0"> 18 Minutes ago </p>
-                  </div>
-                </a>
-                <div class="dropdown-divider"></div>
-                <h6 class="p-3 mb-0 text-center">4 new messages</h6>
+                <h6 class="p-3 mb-0 text-center">0 new messages</h6>
               </div>
             </li>
             <li class="nav-item dropdown">
@@ -219,24 +191,10 @@
           <ul class="nav">
             <li class="nav-item nav-category">Main</li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href=<?php echo $arrConfig['url_admin']."/index.php" ?>>
                 <span class="icon-bg"><i class="mdi mdi-cube menu-icon"></i></span>
                 <span class="menu-title">Dashboard</span>
               </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-                <span class="icon-bg"><i class="mdi mdi-crosshairs-gps menu-icon"></i></span>
-                <span class="menu-title">UI Elements</span>
-                <i class="menu-arrow"></i>
-              </a>
-              <div class="collapse" id="ui-basic">
-                <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"> <a class="nav-link" href="#">Buttons</a></li>
-                  <li class="nav-item"> <a class="nav-link" href="#">Dropdowns</a></li>
-                  <li class="nav-item"> <a class="nav-link" href="#">Typography</a></li>
-                </ul>
-              </div>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">
@@ -257,26 +215,16 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="<?php echo $arrConfig['url_admin'];?>/pages/tables/">
+              <a class="nav-link" href=<?php echo $arrConfig['url_admin']."/administradores?m=1"?>>
                 <span class="icon-bg"><i class="mdi mdi-table-large menu-icon"></i></span>
-                <span class="menu-title">Tables</span>
+                <span class="menu-title">Administrador</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-                <span class="icon-bg"><i class="mdi mdi-lock menu-icon"></i></span>
-                <span class="menu-title">User Pages</span>
-                <i class="menu-arrow"></i>
+              <a class="nav-link" href=<?php echo $arrConfig['url_admin']."/noticias?m=1"?>>
+                <span class="icon-bg"><i class="mdi mdi-table-large menu-icon"></i></span>
+                <span class="menu-title">Notícias</span>
               </a>
-              <div class="collapse" id="auth">
-                <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"> <a class="nav-link" href="#"> Blank Page </a></li>
-                  <li class="nav-item"> <a class="nav-link" href="#"> Login </a></li>
-                  <li class="nav-item"> <a class="nav-link" href="#"> Register </a></li>
-                  <li class="nav-item"> <a class="nav-link" href="#"> 404 </a></li>
-                  <li class="nav-item"> <a class="nav-link" href="#"> 500 </a></li>
-                </ul>
-              </div>
             </li>
             <li class="nav-item documentation-link">
               <a class="nav-link" href="http://www.bootstrapdash.com/demo/connect-plus-free/jquery/documentation/documentation.html" target="_blank">
@@ -292,14 +240,13 @@
                   <div>
                     <div class="d-flex align-items-center">
                       <div class="sidebar-profile-img">
-                        <img src="<?php echo $arrConfig['url_admin'];?>/assets/images/faces/face28.png" alt="image">
+                        <img src=<?php echo $arrConfig['url_admin']."/assets/images/faces/face28.png"?> alt="image">
                       </div>
                       <div class="sidebar-profile-text">
-                        <p class="mb-1"><?php echo $_SESSION['username'] ?></p>
+                        <p class="mb-1"><?php echo $_SESSION['nome'] ?></p>
                       </div>
                     </div>
                   </div>
-                  <div class="badge badge-danger">3</div>
                 </div>
               </div>
             </li>

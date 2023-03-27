@@ -91,14 +91,14 @@
                   <a class="dropdown-item py-1 d-flex align-items-center justify-content-between" href="#">
                     <span>Inbox</span>
                     <span class="p-0">
-                      <span class="badge badge-primary">3</span>
+                      <span class="badge badge-primary">0</span>
                       <i class="mdi mdi-email-open-outline ml-1"></i>
                     </span>
                   </a>
                   <a class="dropdown-item py-1 d-flex align-items-center justify-content-between" href="#">
                     <span>Profile</span>
                     <span class="p-0">
-                      <span class="badge badge-success">1</span>
+                      <span class="badge badge-success">0</span>
                       <i class="mdi mdi-account-outline ml-1"></i>
                     </span>
                   </a>
@@ -127,37 +127,8 @@
               <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="messageDropdown">
                 <h6 class="p-3 mb-0 bg-primary text-white py-4">Messages</h6>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <img src=<?php echo $arrConfig['url_admin']."/assets/images/faces/face4.jpg"?> alt="image" class="profile-pic">
-                  </div>
-                  <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
-                    <h6 class="preview-subject ellipsis mb-1 font-weight-normal">Mark send you a message</h6>
-                    <p class="text-gray mb-0"> 1 Minutes ago </p>
-                  </div>
-                </a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <img src="assets/images/faces/face2.jpg" alt="image" class="profile-pic">
-                  </div>
-                  <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
-                    <h6 class="preview-subject ellipsis mb-1 font-weight-normal">Cregh send you a message</h6>
-                    <p class="text-gray mb-0"> 15 Minutes ago </p>
-                  </div>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <img src="assets/images/faces/face3.jpg" alt="image" class="profile-pic">
-                  </div>
-                  <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
-                    <h6 class="preview-subject ellipsis mb-1 font-weight-normal">Profile picture updated</h6>
-                    <p class="text-gray mb-0"> 18 Minutes ago </p>
-                  </div>
-                </a>
-                <div class="dropdown-divider"></div>
-                <h6 class="p-3 mb-0 text-center">4 new messages</h6>
+                <h6 class="p-3 mb-0 text-center">0 new messages</h6>
               </div>
             </li>
             <li class="nav-item dropdown">
@@ -276,7 +247,6 @@
                       </div>
                     </div>
                   </div>
-                  <div class="badge badge-danger">3</div>
                 </div>
               </div>
             </li>

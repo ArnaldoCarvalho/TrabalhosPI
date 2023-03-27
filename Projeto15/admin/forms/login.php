@@ -30,11 +30,11 @@ include('../../includes/config.inc.php');
                 ?> 
               <div class="form-group">                  
                   <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" name="email" value=""
-                    placeholder="Email" Required>
+                    placeholder="Username" Required>
                 </div>
                 
                 <div class="form-group">
-                  <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" name="pass" value=""
+                  <input type="text" class="form-control form-control-lg" id="exampleInputPassword1" name="pass" value=""
                     placeholder="Password" Required>
                 </div>
                 <?php

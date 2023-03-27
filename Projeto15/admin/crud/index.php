@@ -1,6 +1,5 @@
 <?php
 include '../../include/config.inc.php';
-include $arrConfig['dir_site'].'/include/auth.inc.php';
 
 /*
 $xmlString = file_get_contents($arrConfig['url_admin'].'/administradores/administradores.xml');
@@ -15,26 +14,6 @@ $array = json_decode(json_encode((array) $xml), true);
 $array = array($xml->getName() => $array);
 pr($array);
 */
-
-
-$strChave = '';
-$arrCamposChave = array();
-
-foreach($arrDados['campos'] as $key => $value) {
-    $flagChaveCampo = 0;
-    if(isset($value['chave'])) {
-        if($value['chave'] == 1) {
-            $flagChaveCampo = 1;
-        }
-    }
-    if($flagChaveCampo) {
-        $arrCamposChave[] = $key;
-        $strChave .= $key.'=';
-        $strChave .= "##VALOR$key##&";
-    }
-}
-
-$strChave = substr($strChave,0,strlen($strChave)-1);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -50,38 +29,15 @@ $strChave = substr($strChave,0,strlen($strChave)-1);
     include $arrConfig['dir_admin'].'/include/menu.inc.php';
     ?>
     
-
-    <h1>Listagem "<?php echo $arrDados['legenda_modulo']; ?>"</h1>
-
-    <div>
-        <a href="index.php?m=insert">Inserir novo registo</a>
-    </div>
-    <div>&nbsp;</div>
-
-    <?php
-    if(isset($_GET['erro'])) {
-        if($_GET['erro'] == 1) {
-            echo '<div class="alert">Username já existe, tente outro username!</div>';
-        } elseif($_GET['erro'] == 2) {
-            echo '<div class="alert">Ocorreu um problema, contacto o administrador de sistema!</div>';
-        }
-    }
-    ?>
-
-
+    <h1>Listagem de adminstradores</h1>
+    <a href="index.php?m=insert">Novo</a>
 
     <div class="listagem">
         <table>
             <tr>
                 <?php
                 foreach($arrDados['campos'] as $value) {
-                    $flagMostraCampo = 1;
-                    if(isset($value['listagem'])) {
-                        if($value['listagem'] == 0) {
-                            $flagMostraCampo = 0;
-                        }
-                    }
-                    if($flagMostraCampo) {
+                    if(!isset($value['notlist'])) {
                         echo '<th>'.$value['legenda'].'</th>';
                     }
                 }
@@ -95,17 +51,12 @@ $strChave = substr($strChave,0,strlen($strChave)-1);
             $res = my_query($sql);
             foreach($res as $k=>$v) {
                 //$flagUser = false;
-                $strChaveAux = $strChave;
-                foreach($arrCamposChave as $chave) {
-                    $strChaveAux = str_replace('##VALOR'.$chave.'##',$v[$chave],$strChaveAux);
-                }                
-                $linkEditar = '?m=edit&'.$strChaveAux;
-                $linkEliminar = '?m=delete&'.$strChaveAux;
-                
-                /*if($v['id'] == $_SESSION['uid']) {
+                $linkEditar = 'editar.php?id='.$v['id'];
+                $linkEliminar = 'eliminar.php?id='.$v['id'];
+                if($v['id'] == $_SESSION['uid']) {
                     //$flagUser = true;
                     $linkEliminar = '#';
-                }*/
+                }
             ?>
             <tr>
                 <?php
@@ -116,8 +67,7 @@ $strChave = substr($strChave,0,strlen($strChave)-1);
                             $flagMostraCampo = 0;
                         }
                     }
-                    if($flagMostraCampo) {
-                        if(strlen($v[$key2]) > $arrDados['campos'][$key2]['maxlength'] && isset($arrDados['campos'][$key2]['maxlength'])) $v[$key2] = substr($v[$key2],0,$arrDados['campos'][$key2]['maxlength']) . '...';
+                    if($flagMostraCampo == 1) {
                         echo '<td>'.$v[$key2].'</td>';
                     }
                 }

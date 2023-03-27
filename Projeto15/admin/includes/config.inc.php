@@ -6,9 +6,9 @@ global $arrConfig;
 
 
 if($_SERVER['HTTP_HOST'] == 'web.colgaia.local' || $_SERVER['HTTP_HOST'] == 'localhost') {
-    error_reporting(error_level: E_ALL);
+    error_reporting(E_ALL);
 } else {
-    error_reporting(error_level: 0);
+    error_reporting(0);
 }
 
 $arrConfig['servername'] = 'localhost';
@@ -20,8 +20,8 @@ $arrConfig['dbname'] = 'backoffice';
 $arrConfig['isLoginKey'] = 'sdjfhsdfkjhdsfkjdshfks';
 
 // acessos FrontOffice
-$arrConfig['url_site']='http://localhost/GitHub/projeto15';
-$arrConfig['dir_site']='C:/xampp/htdocs/GitHub/Projeto15';
+$arrConfig['url_site']='http://localhost/TrabalhosPi/projeto14';
+$arrConfig['dir_site']='C:/xampp/htdocs/TrabalhosPi/Projeto14';
 
 // acessos BackOffice
 $folderAdmin = 'admin';

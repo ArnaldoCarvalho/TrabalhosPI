@@ -20,16 +20,23 @@ include('../../includes/config.inc.php');
                 <h6 class="font-weight-light">Signing up is easy. It only takes a few steps</h6>
                 <form class="pt-3" method="post" type="" action="<?php echo($arrConfig['url_admin'].'/forms/TrataRegi.php');?>">
                   <div class="form-group">
-                    <input type="text" class="form-control form-control-lg" id="exampleInputUsername1" placeholder="Nome" name="nome">
+                    <input type="text" class="form-control form-control-lg" id="exampleInputUsername1" placeholder="Username" name="nome" required>
                   </div>
                   <div class="form-group">
-                    <input type="text" class="form-control form-control-lg" id="exampleInputUsername1" placeholder="Username" name="username">
+                    <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Email" name="email" required>
                   </div>
                   <div class="form-group">
-                    <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Email" name="email">
+                    <select class="form-control form-control-lg" id="exampleFormControlSelect2">
+                      <option>Country</option>
+                      <option>United States of America</option>
+                      <option>United Kingdom</option>
+                      <option>India</option>
+                      <option>Germany</option>
+                      <option>Argentina</option>
+                    </select>
                   </div>
                   <div class="form-group">
-                    <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password" name="pass">
+                    <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password" name="pass" required>
                   </div>
                   <div class="mb-4">
                     <div class="form-check">

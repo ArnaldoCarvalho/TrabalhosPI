@@ -16,7 +16,15 @@ include('includes/config.inc.php');
 <body>
   <?php
 
-  include($arrConfig['dir_admin'].'/includes/auth.inc.php');
+  if (isset($_SESSION['user'])) {
+    if(isset($_SESSION['auth']))
+    if($_SESSION['auth']== 1){}
+    else{
+      header('Location:' . $arrConfig['url_admin'] . '/forms/login.php');
+    }
+  } else {
+    header('Location:' . $arrConfig['url_admin'] . '/forms/login.php');
+  }
 
   ?>
   <div class="container-scroller">

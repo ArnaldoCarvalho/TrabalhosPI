@@ -1,6 +1,5 @@
 <?php
-include '../../include/config.inc.php';
-include $arrConfig['dir_site'].'/include/auth.inc.php';
+include '../includes/config.inc.php';
 
 $str = '';
 foreach($arrDados['campos'] as $key => $value) {
@@ -61,11 +60,11 @@ $sql = "UPDATE $arrDados[tabela] SET $str WHERE $strChave";
 $res = my_query($sql);
 if($res) {
     // sucesso de inserção
-    header('location: '.$arrConfig['url_admin'].'/'.$arrDados['modulo'].'/?editar='.$res);
+    header('location: '.$arrConfig['url_admin'].'/'.$arrDados['modulo'].'/?m=1');
     exit();
 }
 
 // problema na inserção
-header('location: '.$arrConfig['url_admin'].'/'.$arrDados['modulo'].'/?erro=2');
+header('location: '.$arrConfig['url_admin'].'/'.$arrDados['modulo'].'/?erro=2&m=edit');
 exit();
 ?>

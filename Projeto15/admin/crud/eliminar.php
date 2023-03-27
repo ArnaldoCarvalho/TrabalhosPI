@@ -1,7 +1,5 @@
 <?php
-include '../../include/config.inc.php';
-include $arrConfig['dir_site'].'/include/auth.inc.php';
-
+include '../include/config.inc.php';
 
 $strChave = '';
 
@@ -24,6 +22,6 @@ $strChave = substr($strChave,0,strlen($strChave)-5);
 $sql = "DELETE FROM $arrDados[tabela] WHERE $strChave";
 $res = my_query($sql);
 
-header('location: '.$arrConfig['url_admin'].'/'.$arrDados['modulo'].'/?delete='.$res);
+header('location: '.$arrConfig['url_admin'].'/'.$arrDados['modulo'].'/?m=1');
 exit();
 ?>

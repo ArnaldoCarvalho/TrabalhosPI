@@ -1,9 +1,11 @@
 <?php
-include '../../include/config.inc.php';
-include $arrConfig['dir_site'].'/include/auth.inc.php';
+include '../includes/config.inc.php';
 include 'config.php';
 
 $operacao = $_GET['m'];
+if(isset($_GET['id'])){
+    $id = 'id='.$_GET['id'];
+}
 
 switch($operacao) {
     case 'insert': 
@@ -27,6 +29,7 @@ switch($operacao) {
                 break;
     
     default: 
-                include $arrConfig['dir_admin'] . '/crud/index.php';
+                include $arrConfig['dir_admin'] . '/tabel.php';
 }
+
 ?>

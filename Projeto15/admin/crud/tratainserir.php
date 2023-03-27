@@ -1,6 +1,5 @@
 <?php
-include '../../include/config.inc.php';
-include $arrConfig['dir_site'].'/include/auth.inc.php';
+include '../includes/config.inc.php';
 
 $str1 = '';
 $str2 = '';
@@ -17,6 +16,7 @@ foreach($arrDados['campos'] as $key => $value) {
         if(!isset($_POST[$key])) $_POST[$key] = 0;
         if(isset($arrDados['campos'][$key]['geraHash'])) $_POST[$key] = password_hash($_POST[$key], PASSWORD_DEFAULT);
         $str2 .= "'$_POST[$key]',";
+        
     }
 }
 
@@ -37,14 +37,15 @@ if(count($res)) {
 
 // tentar inserir o novo user
 $sql = "INSERT INTO $arrDados[tabela] ($str1) VALUES ($str2)";
+
 $res = my_query($sql);
 if($res) {
     // sucesso de inserção
-    header('location: '.$arrConfig['url_admin'].'/'.$arrDados['modulo'].'/?inserir='.$res);
+    header('location: '.$arrConfig['url_admin'].'/'.$arrDados['modulo'].'/?m=1');
     exit();
 }
 
 // problema na inserção
-header('location: '.$arrConfig['url_admin'].'/'.$arrDados['modulo'].'/?erro=2');
+header('location: '.$arrConfig['url_admin'].'/'.$arrDados['modulo'].'/?erro=2&m=edit');
 exit();
 ?>

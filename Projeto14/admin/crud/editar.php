@@ -81,22 +81,14 @@ $res = my_query($sql);
           </nav>
         </div>
         <div class="row">
-
-
-
           <div class="col-12 grid-margin stretch-card">
             <div class="card">
               <div class="card-body">
-                <h1>Inserir "<?php echo $arrDados['legenda_modulo']; ?>"</h1>
+                <h1 class="card-title">Editar "<?php echo $arrDados['legenda_modulo']; ?>"</h1>
                 <div>&nbsp;</div>
 
                 <table>
-                  <form method="post" action="?m=trataedit">
-
-                    <?php
-
-                    ?>
-
+                  <form method="post" action=<?php echo $arrConfig['url_admin']."/".$arrDados['modulo']."/?m=trataedit"?>>
 
                     <?php
                     foreach ($arrDados['campos'] as $key => $value) {
@@ -120,49 +112,7 @@ $res = my_query($sql);
 
                   </form>
                 </table>
-                <h4 class="card-title">Basic form elements</h4>
-                <p class="card-description"> Basic form elements </p>
-                <form class="forms-sample">
-                  <div class="form-group">
-                    <label for="exampleInputName1">Name</label>
-                    <input type="text" class="form-control" id="exampleInputName1" placeholder="Name">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail3">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputPassword4">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword4" placeholder="Password">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleSelectGender">Gender</label>
-                    <select class="form-control" id="exampleSelectGender">
-                      <option>Male</option>
-                      <option>Female</option>
-                    </select>
-                  </div>
-                  <div class="form-group">
-                    <label>File upload</label>
-                    <input type="file" name="img[]" class="file-upload-default">
-                    <div class="input-group col-xs-12">
-                      <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
-                      <span class="input-group-append">
-                        <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
-                      </span>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputCity1">City</label>
-                    <input type="text" class="form-control" id="exampleInputCity1" placeholder="Location">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleTextarea1">Textarea</label>
-                    <textarea class="form-control" id="exampleTextarea1" rows="4"></textarea>
-                  </div>
-                  <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                  <button class="btn btn-light">Cancel</button>
-                </form>
+                
               </div>
             </div>
           </div>
@@ -212,41 +162,52 @@ function mostraCampo($nomeCampo, $arrCampo, $valor)
 
   switch ($arrCampo['tipo']) {
     case 'password':
-      echo '<tr><div class="form-group">
-                    <td>' . $arrCampo['legenda'] . '</td>
-                    <td>' . '<input type="' . $arrCampo['tipo'] . '" name="' . $nomeCampo . '" /></td>
-                </div></tr>';
-      break;
-
+      echo ' <div class="form-group">
+                <label for="exampleInputName1">' . $arrCampo['legenda'] . '</label>
+                <input type="' . $arrCampo['tipo'] . '" class="form-control" id="exampleInputName1" name="' . $nomeCampo . '">
+             </div>';
+    break;
     case 'textbox':
+      echo ' <div class="form-group">
+                <label for="exampleInputName1">' . $arrCampo['legenda'] . '</label>
+                <input type="' . $arrCampo['tipo'] . '" class="form-control" id="exampleInputName1" value="' . $valor . '" name="' . $nomeCampo . '">
+             </div>';
+    break;
     case 'date':
+    break;
     case 'time':
+    break;
     case 'color':
-      echo '<tr>
-                    <td>' . $arrCampo['legenda'] . '</td>
-                    <td>' . '<input class="form-control" id="exampleInputName1" type="' . $arrCampo['tipo'] . '" name="' . $nomeCampo . '" value="' . $valor . '" /></td>
-                </tr>';
-      break;
-
-
+    break;
+    case 'email':
+      echo ' <div class="form-group">
+                <label for="exampleInputName1">' . $arrCampo['legenda'] . '</label>
+                <input type="' . $arrCampo['tipo'] . '" class="form-control" id="exampleInputName1" value="' . $valor . '" name="' . $nomeCampo . '">
+             </div>';
+    break;
     case 'checkbox':
       $checked = $valor ? 'checked' : '';
-      echo '<tr>
-                    <td>' . $arrCampo['legenda'] . '</td>
-                    <td>' . '<input ' . $checked . ' type="checkbox" name="' . $nomeCampo . '" value="1"></td>
-                </tr>';
-      break;
-
+      echo ' <div class="form-group">
+              <label for="exampleInputName1">' . $arrCampo['legenda'] . '</label>
+              <input ' . $checked . ' type="checkbox" class="form-control" id="exampleInputName1" value="1" name="' . $nomeCampo . '">
+            </div>';
+    break;
     case 'select':
-    case 'selectList':
-    case 'radio':
-    case 'file':
-    case 'textarea':
-      echo '<tr>
-                <td>' . $arrCampo['legenda'] . '</td>
-                <td>' . '<textarea name="' . $nomeCampo . '">' . $valor . '</textarea></td>
-                </tr>';
       break;
+    case 'selectList':
+      break;
+    case 'radio':
+     break;
+    case 'file':
+      break;
+    case 'textarea':
+      echo ' <div class="form-group">
+                <label for="exampleInputName1">' . $arrCampo['legenda'] . '</label>
+                <textarea class="form-control" id="exampleInputName1" name="' . $nomeCampo . '">' . $valor . '</textarea>
+             </div>';
+      break;
+    default;
+    break;
   }
 }
 ?>
