@@ -2,6 +2,7 @@
 $arrDados = array(
 
     'tabela' => 'administradores',
+    'legenda_modulo' => 'Aministradores',
     //'tabela_idiomas' => 'administradores_linguas',
     
     'campos' => array(

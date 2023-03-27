@@ -23,7 +23,7 @@ include('includes/config.inc.php');
   <!-- Layout styles -->
   <link rel="stylesheet" href=<?php echo $arrConfig['url_admin']."/assets/css/style.css"?>>
   <!-- End layout styles -->
-  <link rel="shortcut icon" href=<?php echo $arrConfig['url_admin']."/assets/images/favicon.png"?> />
+  <link rel="shortcut icon" href=<?php echo $arrConfig['url_admin']."/assets/images/favicon.png"?>/>
 </head>
 
 <body>
@@ -84,8 +84,8 @@ include('includes/config.inc.php');
                     $res = my_query($sql);
                     foreach ($res as $k => $v) {
                       //$flagUser = false;
-                      $linkEditar = 'editar.php?id=' . $v['id'];
-                      $linkEliminar = 'eliminar.php?id=' . $v['id'];
+                      $linkEditar =  $arrConfig['url_admin'].'/'.$arrDados['tabela'].'?m=edit&id=' . $v['id'];
+                      $linkEliminar = $arrConfig['url_admin'].'/'.$arrDados['tabela'].'?m=delete&id=' . $v['id'];
                       if ($v['id'] == $_SESSION['uid']) {
                         //$flagUser = true;
                         $linkEliminar = '#';

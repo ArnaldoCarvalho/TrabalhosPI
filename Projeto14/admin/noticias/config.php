@@ -2,6 +2,8 @@
 $arrDados = array(
 
     'tabela' => 'noticias',
+    'legenda_modulo' => 'Notícias',
+
     'campos' => array(
             'id' => array (
                 'legenda' => 'ID',

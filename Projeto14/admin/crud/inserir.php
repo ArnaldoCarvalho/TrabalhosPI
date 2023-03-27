@@ -1,5 +1,5 @@
 <?php
-include '../../include/config.inc.php';
+include '../include/config.inc.php';
 include $arrConfig['dir_site'].'/include/auth.inc.php';
 ?>
 <!DOCTYPE html>
