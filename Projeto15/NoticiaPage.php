@@ -40,15 +40,10 @@ Licence URI: https://www.os-templates.com/template-terms
   <div id="pageintro"> 
     <!-- ################################################################################################ -->
     <div class="title">
-      <h2>Full Width</h2>
+      <h2>Notícia</h2>
     </div>
     <div id="breadcrumb" class="clear">
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Lorem</a></li>
-        <li><a href="#">Ipsum</a></li>
-        <li><a href="#">Dolor</a></li>
-      </ul>
+      
     </div>
     <!-- ################################################################################################ -->
   </div>

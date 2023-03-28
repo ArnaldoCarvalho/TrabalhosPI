@@ -40,7 +40,7 @@ Licence URI: https://www.os-templates.com/template-terms
   <div id="pageintro"> 
     <!-- ################################################################################################ -->
     <div class="title">
-      <h2>About Us</h2>
+      <h2>About</h2>
     </div>
     <div id="breadcrumb" class="clear">
      
