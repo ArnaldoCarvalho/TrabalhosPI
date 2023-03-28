@@ -1,5 +1,5 @@
 <?php
-include('C:/xampp/htdocs/GitHub/Projeto15/includes/config.inc.php');
+include('C:/xampp/htdocs/TrabalhosPi/Projeto15/includes/config.inc.php');
 ?>
 <!-- Required meta tags -->
 <meta charset="utf-8">

@@ -1,9 +1,9 @@
 <?php
 $arrDados = array(
 
-    'tabela' => 'noticias',
-    'legenda_modulo' => 'Notícias',
-    'modulo' => 'noticias',
+    'tabela' => 'about',
+    'legenda_modulo' => 'Página About',
+    'modulo' => 'about',
     'campos' => array(
             'id' => array (
                 'legenda' => 'ID',
@@ -12,13 +12,13 @@ $arrDados = array(
                 'chave' => 1,
                 'inserir' => 0
             ),
-            'titulo' => array (
-                'legenda' => 'Título',
+            'pai' => array (
+                'legenda' => 'Pai',
                 'tipo' => 'textbox',
                 'maxlength' => 50
             ),
-            'resumo' => array (
-                'legenda' => 'Resumo',
+            'name' => array (
+                'legenda' => 'name',
                 'tipo' => 'textbox',
                 'maxlength' => 50
             ),
@@ -28,9 +28,9 @@ $arrDados = array(
                 'maxlength' => 100,
                 'notlist' => 1
             ),
-            'imgurl' => array (
+            'img' => array (
                 'legenda' => 'Imagem Url',
-                'tipo' => 'file',
+                'tipo' => 'textbox',
                 'maxlength' => 100
             ),
             'ativo' => array (

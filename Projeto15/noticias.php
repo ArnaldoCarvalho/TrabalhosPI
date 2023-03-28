@@ -36,18 +36,15 @@ Licence URI: https://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="wrapper row2 bgded" style="background-image:url('images/demo/backgrounds/2.png');">
+<div class="wrapper row2 bgded" style="background-image:url('<?php echo $arrConfig['url_site'] . '/images/home/News.jpg' ?>');">
   <div id="pageintro"> 
     <!-- ################################################################################################ -->
     <div class="title">
-      <h2>Gallery</h2>
+      <h2>Notícias</h2>
     </div>
     <div id="breadcrumb" class="clear">
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Lorem</a></li>
-        <li><a href="#">Ipsum</a></li>
-        <li><a href="#">Dolor</a></li>
+  
       </ul>
     </div>
     <!-- ################################################################################################ -->
@@ -62,41 +59,46 @@ Licence URI: https://www.os-templates.com/template-terms
     <!-- ################################################################################################ -->
     <div id="gallery">
       <figure class="overlay">
-        <header class="heading">Gallery Title Goes Here</header>
+        <header class="heading">Notícias</header>
         <ul class="nospace clear">
-          <li class="one_quarter first"><a href="#"><img src="images/demo/gallery/1.png" alt=""></a></li>
-          <li class="one_quarter"><a href="#"><img src="images/demo/gallery/1.png" alt=""></a></li>
-          <li class="one_quarter"><a href="#"><img src="images/demo/gallery/1.png" alt=""></a></li>
-          <li class="one_quarter"><a href="#"><img src="images/demo/gallery/1.png" alt=""></a></li>
-          <li class="one_quarter first"><a href="#"><img src="images/demo/gallery/1.png" alt=""></a></li>
-          <li class="one_quarter"><a href="#"><img src="images/demo/gallery/1.png" alt=""></a></li>
-          <li class="one_quarter"><a href="#"><img src="images/demo/gallery/1.png" alt=""></a></li>
-          <li class="one_quarter"><a href="#"><img src="images/demo/gallery/1.png" alt=""></a></li>
-          <li class="one_quarter first"><a href="#"><img src="images/demo/gallery/1.png" alt=""></a></li>
-          <li class="one_quarter"><a href="#"><img src="images/demo/gallery/1.png" alt=""></a></li>
-          <li class="one_quarter"><a href="#"><img src="images/demo/gallery/1.png" alt=""></a></li>
-          <li class="one_quarter"><a href="#"><img src="images/demo/gallery/1.png" alt=""></a></li>
+          <?php
+          
+          $numRegistosPorPagina=2;
+          $paginaAtual = isset($_GET['p']) ? $_GET['p']:1;
+          
+          $sql = "SELECT * FROM noticias WHERE ativo = '1'";
+          $res = my_query($sql);
+          $totalRegistos = count($res);
+
+          $inicioFiltroPorPagina = ($paginaAtual - 1)*$numRegistosPorPagina;
+
+          $sql = "SELECT * FROM noticias WHERE ativo = '1' LIMIT $inicioFiltroPorPagina, $numRegistosPorPagina";
+          $res = my_query($sql);
+
+          foreach ($res as $value) {
+            $titulo = $value['titulo'];
+            $resumo = $value['resumo'];
+            $texto = $value['texto'];
+            ?>
+            <li class="one_quarter"><a href="<?php echo $arrConfig['url_site'].'/NoticiaPage.php?id='.$value['id'] ?>"><img src="<?php echo $arrConfig['url_site'].'/'.$value['imgurl'] ?>" alt=""></a><?php echo $titulo; ?></li>
+            <?php
+          }
+
+          ?>
         </ul>
-        <figcaption>Gallery Description Goes Here</figcaption>
       </figure>
     </div>
     <!-- ################################################################################################ -->
     <!-- ################################################################################################ -->
     <nav class="pagination">
-      <ul>
-        <li><a href="#">&laquo; Previous</a></li>
-        <li><a href="#">1</a></li>
-        <li><a href="#">2</a></li>
-        <li><strong>&hellip;</strong></li>
-        <li><a href="#">6</a></li>
-        <li class="current"><strong>7</strong></li>
-        <li><a href="#">8</a></li>
-        <li><a href="#">9</a></li>
-        <li><strong>&hellip;</strong></li>
-        <li><a href="#">14</a></li>
-        <li><a href="#">15</a></li>
-        <li><a href="#">Next &raquo;</a></li>
-      </ul>
+      <?php
+      $numTotalDePaginas = ceil($totalRegistos / $numRegistosPorPagina);
+      echo '<ul>';
+      for ($i=1; $i <= $numTotalDePaginas; $i++) { 
+        echo '<li><a href="?p='.$i.'">'.$i.'</a></li>';
+      }
+      echo '</ul>';
+      ?>
     </nav>
     <!-- ################################################################################################ -->
     <!-- / container body -->

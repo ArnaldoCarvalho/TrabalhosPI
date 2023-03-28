@@ -26,7 +26,7 @@ $arrDados = array(
             ),
             'img' => array (
                 'legenda' => 'Imagem Url',
-                'tipo' => 'textbox',
+                'tipo' => 'file',
                 'maxlength' => 100
             ),
             'pass' => array (
@@ -36,6 +36,7 @@ $arrDados = array(
                 'listagem' => 0,
                 'geraHash' => 1
             ),
+
             'ativo' => array (
                 'legenda' => 'Ativo',
                 'tipo' => 'checkbox',

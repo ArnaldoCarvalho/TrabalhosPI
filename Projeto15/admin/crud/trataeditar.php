@@ -18,11 +18,12 @@ foreach($arrDados['campos'] as $key => $value) {
     }
 
     if($flagEditarCampo) {
+        if(isset($_POST[$key])){
         if($_POST[$key] != ''){
         $str .= $key.'=';
         if(!isset($_POST[$key])) $_POST[$key] = 0;
         if(isset($arrDados['campos'][$key]['geraHash'])) $_POST[$key] = password_hash($_POST[$key], PASSWORD_DEFAULT);
-        $str .= "'$_POST[$key]',";}
+        $str .= "'$_POST[$key]',";}}
     }
 }
 $str = substr($str,0,strlen($str)-1);
@@ -57,8 +58,20 @@ if(count($res)) {
 }
 */
 
+
+$filedados = index($_FILES);
+if($arrDados['modulo']=='administradores'){
+if($_FILES['Foto']['name'] != '' ){
+$str = $str.',img="'.uploadFile($_FILES[$filedados[0]]).'"';}
+}else{
+    if($_FILES['Foto']['name'] != '' ){
+        $str = $str.',imgurl="'.uploadFile($_FILES[$filedados[0]]).'"';}
+}
+
 // tentar inserir o novo user
+
 $sql = "UPDATE $arrDados[tabela] SET $str WHERE $strChave";
+
 $res = my_query($sql);
 if($res) {
     // sucesso de inserção

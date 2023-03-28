@@ -36,7 +36,7 @@ Licence URI: https://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="wrapper row2 bgded" style="background-image:url('<?php echo $arrConfig['url_site'] . '/images/home/pagetenis.jpg' ?>');">
+<div class="wrapper row2 bgded" style="background-image:url('../images/demo/backgrounds/2.png');">
   <div id="pageintro"> 
     <!-- ################################################################################################ -->
     <div class="title">
@@ -58,41 +58,24 @@ Licence URI: https://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <div class="wrapper row3">
   <main class="container clear"> 
-    <?php
+  <?php
 
 include './includes/config.inc.php';
 @session_start();
-$sql = "SELECT * FROM noticias WHERE id = $_GET[id]";
+$sql = "SELECT * FROM about WHERE pai = $_GET[n]";
 $results = my_query($sql);
 
 if ($results != 0) {
   foreach ($results as $Key => $Value) {
     echo '<h1> - ' . $results[$Key]['titulo'] . '</h1>';
-    echo '<img class="imgr borderedbox inspace-5" src=' . $arrConfig['url_site'] . $results[$Key]['imgurl'] . ' alt="">';
+    echo '<img class="imgr borderedbox inspace-5" src=' . $arrConfig['url_site'] . $results[$Key]['img'] . ' alt="">';
+    echo '<p> ->'. $results[$Key]['name'] .'</p>';
     echo '<p>'. $results[$Key]['texto'] .'</p>';
-    echo '<h6> - Resumo </h6>';
-    echo '<p>'. $results[$Key]['resumo'] .'</p>';
   }
 }
 
 ?>
-  </main>
-</div>
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<div class="wrapper row4">
-  <figure class="clients"> 
-    <!-- ################################################################################################ -->
-    <ul class="clear">
-      <li><a href="#"><img src="../images/demo/logos/1.png" alt=""></a></li>
-      <li><a href="#"><img src="../images/demo/logos/2.png" alt=""></a></li>
-      <li><a href="#"><img src="../images/demo/logos/1.png" alt=""></a></li>
-      <li><a href="#"><img src="../images/demo/logos/2.png" alt=""></a></li>
-      <li><a href="#"><img src="../images/demo/logos/1.png" alt=""></a></li>
-    </ul>
-    <!-- ################################################################################################ -->
-  </figure>
+ </main>
 </div>
 <!-- ################################################################################################ -->
 <div class="wrapper row5">

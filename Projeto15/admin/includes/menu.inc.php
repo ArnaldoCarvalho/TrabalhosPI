@@ -1,4 +1,4 @@
-<?php include('C:/xampp/htdocs/GitHub/Projeto15/includes/config.inc.php'); @session_start();?>
+<?php include('C:/xampp/htdocs/TrabalhosPi/Projeto15/includes/config.inc.php'); @session_start();?>
 
       <!-- partial:partials/_navbar.html -->
       <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
@@ -76,7 +76,7 @@
             <li class="nav-item nav-profile dropdown">
               <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
                 <div class="nav-profile-img">
-                  <img src=<?php echo $arrConfig['url_site'].'/'.$_SESSION['img']?> alt="image">
+                  <img src="<?php echo $arrConfig['url_site'].$_SESSION['img']?>" alt="image">
                 </div>
                 <div class="nav-profile-text">
                   <p class="mb-1 text-black"><?php echo $_SESSION['nome'] ?></p>
@@ -84,7 +84,7 @@
               </a>
               <div class="dropdown-menu navbar-dropdown dropdown-menu-right p-0 border-0 font-size-sm" aria-labelledby="profileDropdown" data-x-placement="bottom-end">
                 <div class="p-3 text-center bg-primary">
-                  <img class="img-avatar img-avatar48 img-avatar-thumb" src=<?php echo $arrConfig['url_site'].'/'.$_SESSION['img']?> alt="">
+                  <img class="img-avatar img-avatar48 img-avatar-thumb" src="<?php echo $arrConfig['url_site'].$_SESSION['img']?>" alt="">
                 </div>
                 <div class="p-2">
                   <h5 class="dropdown-header text-uppercase pl-2 text-dark">User Options</h5>
@@ -224,7 +224,7 @@
                   <div>
                     <div class="d-flex align-items-center">
                       <div class="sidebar-profile-img">
-                        <img src=<?php echo $arrConfig['url_site'].'/'.$_SESSION['img']?> alt="image">
+                        <img  class="img-avatar img-avatar48 img-avatar-thumb" src="<?php echo $arrConfig['url_site'].$_SESSION['img']?>" alt="image">
                       </div>
                       <div class="sidebar-profile-text">
                         <p class="mb-1"><?php echo $_SESSION['nome'] ?></p>

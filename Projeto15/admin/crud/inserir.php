@@ -71,7 +71,7 @@ include('../../includes/config.inc.php');
                 <div>&nbsp;</div>
 
                 <table>
-                  <form method="post" action=<?php echo $arrConfig['url_admin']."/".$arrDados['modulo']."/?m=tratainsert"?>>
+                  <form method="post"  enctype="multipart/form-data"  action=<?php echo $arrConfig['url_admin']."/".$arrDados['modulo']."/?m=tratainsert"?>>
 
                     <?php
                     foreach ($arrDados['campos'] as $key => $value) {
@@ -180,7 +180,12 @@ function mostraCampo($nomeCampo, $arrCampo)
     case 'radio':
      break;
     case 'file':
-      break;
+      echo ' <div class="form-group">
+              <label for="">Foto:</label>
+              <input type="file" name="Foto"  ><br><br>
+          </div>';
+
+    break;
     case 'textarea':
       echo ' <div class="form-group">
                 <label for="exampleInputName1">' . $arrCampo['legenda'] . '</label>

@@ -88,7 +88,7 @@ $res = my_query($sql);
                 <div>&nbsp;</div>
 
                 <table>
-                  <form method="post" action=<?php echo $arrConfig['url_admin']."/".$arrDados['modulo']."/?m=trataedit&id=$_GET[id]" ?>>
+                  <form method="post"  enctype="multipart/form-data" action=<?php echo $arrConfig['url_admin']."/".$arrDados['modulo']."/?m=trataedit&id=$_GET[id]" ?>>
 
                     <?php
                     foreach ($arrDados['campos'] as $key => $value) {
@@ -199,6 +199,10 @@ function mostraCampo($nomeCampo, $arrCampo, $valor)
     case 'radio':
      break;
     case 'file':
+      echo ' <div class="form-group">
+      <label for="">Foto:</label>
+      <input type="file" name="Foto"  ><br><br>
+  </div>';
       break;
     case 'textarea':
       echo ' <div class="form-group">

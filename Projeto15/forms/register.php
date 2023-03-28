@@ -18,7 +18,7 @@ include('../includes/config.inc.php');
                 </div>
                 <h4>New here?</h4>
                 <h6 class="font-weight-light">Signing up is easy. It only takes a few steps</h6>
-                <form class="pt-3" method="post" type="" action="<?php echo($arrConfig['url_site'].'/forms/TrataRegi.php');?>">
+                <form class="pt-3" method="post" enctype="multipart/form-data" type="" action="<?php echo($arrConfig['url_site'].'/forms/TrataRegi.php');?>">
                   <div class="form-group">
                     <input type="text" class="form-control form-control-lg" id="exampleInputUsername1" placeholder="Username" name="nome" required>
                   </div>

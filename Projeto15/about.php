@@ -36,19 +36,14 @@ Licence URI: https://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="wrapper row2 bgded" style="background-image:url('../images/demo/backgrounds/2.png');">
+<div class="wrapper row2 bgded" style="background-image:url('<?php echo $arrConfig['url_site'] . '/images/home/About.jpg' ?>');">
   <div id="pageintro"> 
     <!-- ################################################################################################ -->
     <div class="title">
-      <h2>Full Width</h2>
+      <h2>About Us</h2>
     </div>
     <div id="breadcrumb" class="clear">
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Lorem</a></li>
-        <li><a href="#">Ipsum</a></li>
-        <li><a href="#">Dolor</a></li>
-      </ul>
+     
     </div>
     <!-- ################################################################################################ -->
   </div>
@@ -67,9 +62,8 @@ $results = my_query($sql);
 
 if ($results != 0) {
   foreach ($results as $Key => $Value) {
-    echo '<h1> - ' . $results[$Key]['titulo'] . '</h1>';
     echo '<img class="imgr borderedbox inspace-5" src=' . $arrConfig['url_site'] . $results[$Key]['img'] . ' alt="">';
-    echo '<p> ->'. $results[$Key]['name'] .'</p>';
+    if($results[$Key]['name']!='')echo '<h1> ->'. $results[$Key]['name'] .'</h1>';
     echo '<p>'. $results[$Key]['texto'] .'</p>';
   }
 }
