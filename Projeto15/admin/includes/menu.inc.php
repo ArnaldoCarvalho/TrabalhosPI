@@ -1,10 +1,10 @@
-<?php include('C:/xampp/htdocs/TrabalhosPi/Projeto14/admin/includes/config.inc.php');?>
+<?php include('C:/xampp/htdocs/GitHub/Projeto15/includes/config.inc.php'); @session_start();?>
 
       <!-- partial:partials/_navbar.html -->
       <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-          <a class="navbar-brand brand-logo" href="index.php"><img src=<?php echo $arrConfig['url_admin']."/assets/images/logo.svg"?> alt="logo" /></a>
-          <a class="navbar-brand brand-logo-mini" href="index.php"><img src=<?php echo $arrConfig['url_admin']."/assets/images/logo-mini.svg"?> alt="logo" /></a>
+          <a class="navbar-brand brand-logo" href="<?php echo $arrConfig['url_admin']."/index.php"?>"><img src=<?php echo $arrConfig['url_admin']."/assets/images/logo.svg"?> alt="logo" /></a>
+          <a class="navbar-brand brand-logo-mini" href="<?php echo $arrConfig['url_admin']."/index.php"?>"><img src=<?php echo $arrConfig['url_admin']."/assets/images/logo-mini.svg"?> alt="logo" /></a>
         </div>
         <div class="navbar-menu-wrapper d-flex align-items-stretch">
           <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -76,7 +76,7 @@
             <li class="nav-item nav-profile dropdown">
               <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
                 <div class="nav-profile-img">
-                  <img src=<?php echo $arrConfig['url_admin']."/assets/images/faces/face28.png"?> alt="image">
+                  <img src=<?php echo $arrConfig['url_site'].'/'.$_SESSION['img']?> alt="image">
                 </div>
                 <div class="nav-profile-text">
                   <p class="mb-1 text-black"><?php echo $_SESSION['nome'] ?></p>
@@ -84,7 +84,7 @@
               </a>
               <div class="dropdown-menu navbar-dropdown dropdown-menu-right p-0 border-0 font-size-sm" aria-labelledby="profileDropdown" data-x-placement="bottom-end">
                 <div class="p-3 text-center bg-primary">
-                  <img class="img-avatar img-avatar48 img-avatar-thumb" src=<?php echo $arrConfig['url_admin']."/assets/images/faces/face28.png"?> alt="">
+                  <img class="img-avatar img-avatar48 img-avatar-thumb" src=<?php echo $arrConfig['url_site'].'/'.$_SESSION['img']?> alt="">
                 </div>
                 <div class="p-2">
                   <h5 class="dropdown-header text-uppercase pl-2 text-dark">User Options</h5>
@@ -189,58 +189,42 @@
         <!-- partial:partials/_sidebar.html -->
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
           <ul class="nav">
-            <li class="nav-item nav-category">Main</li>
-            <li class="nav-item">
-              <a class="nav-link" href=<?php echo $arrConfig['url_admin']."/index.php" ?>>
-                <span class="icon-bg"><i class="mdi mdi-cube menu-icon"></i></span>
-                <span class="menu-title">Dashboard</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span class="icon-bg"><i class="mdi mdi-contacts menu-icon"></i></span>
-                <span class="menu-title">Icons</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span class="icon-bg"><i class="mdi mdi-format-list-bulleted menu-icon"></i></span>
-                <span class="menu-title">Forms</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span class="icon-bg"><i class="mdi mdi-chart-bar menu-icon"></i></span>
-                <span class="menu-title">Charts</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href=<?php echo $arrConfig['url_admin']."/administradores?m=1"?>>
-                <span class="icon-bg"><i class="mdi mdi-table-large menu-icon"></i></span>
-                <span class="menu-title">Administrador</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href=<?php echo $arrConfig['url_admin']."/noticias?m=1"?>>
-                <span class="icon-bg"><i class="mdi mdi-table-large menu-icon"></i></span>
-                <span class="menu-title">Notícias</span>
-              </a>
-            </li>
-            <li class="nav-item documentation-link">
-              <a class="nav-link" href="http://www.bootstrapdash.com/demo/connect-plus-free/jquery/documentation/documentation.html" target="_blank">
-                <span class="icon-bg">
-                  <i class="mdi mdi-file-document-box menu-icon"></i>
-                </span>
-                <span class="menu-title">Documentation</span>
-              </a>
-            </li>
+            <?php
+              @session_start();
+              $sql = "SELECT * FROM menubackoffice WHERE pai = 0 AND ativo = 1";
+              $results = my_query($sql);
+
+              if ($results != 0) {
+                ?>
+                
+                  <li class="nav-item nav-category">Main</li>
+                    <?php
+                    foreach ($results as $Key => $Value) {
+                      $sql = "SELECT * FROM menubackoffice WHERE pai = " . $results[$Key]['id'] . " AND ativo = 1 ";
+                      $SubMeno = my_query($sql);
+
+                      if ($SubMeno != null) {
+                       //criar sub menus 
+                      } else {
+                       echo '<li class="nav-item">
+                                <a class="nav-link" href="' . $arrConfig['url_admin'] . '/' . $results[$Key]['url'] . '" >
+                                  <span class="icon-bg"><i class="mdi ' . $results[$Key]['style'] . ' menu-icon"></i></span>
+                                  <span class="menu-title">' . $results[$Key]['nome'] . '</span>
+                                </a>
+                              </li>';
+                      }
+                    }
+                    ?>
+                <?php
+              }
+            ?>
             <li class="nav-item sidebar-user-actions">
               <div class="user-details">
                 <div class="d-flex justify-content-between align-items-center">
                   <div>
                     <div class="d-flex align-items-center">
                       <div class="sidebar-profile-img">
-                        <img src=<?php echo $arrConfig['url_admin']."/assets/images/faces/face28.png"?> alt="image">
+                        <img src=<?php echo $arrConfig['url_site'].'/'.$_SESSION['img']?> alt="image">
                       </div>
                       <div class="sidebar-profile-text">
                         <p class="mb-1"><?php echo $_SESSION['nome'] ?></p>

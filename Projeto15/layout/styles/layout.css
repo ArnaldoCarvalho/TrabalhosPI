@@ -54,11 +54,11 @@ File: Layout CSS
 .latest *{margin:0; padding:0;}
 .latest ul, .latest ul li{border:solid;}
 .latest ul{border:solid; border-width:1px 0;}
-.latest ul li{display:block; float:left; width:20%; border-width:0 0 0 1px; box-sizing:border-box;}
+.latest ul li{display:block; float:left; width:20%; border-width:0 0 0 0px; box-sizing:border-box;}
 .latest ul li:first-child{border-left:none;}
 .latest ul li:first-child, .latest ul li:nth-child(5n+1){clear:left;}
 .latest ul li *{width:100%; box-sizing:border-box;}
-
+.latest ul li img{ max-height: 260px;}
 
 /* Clients
 ---------------------------------------------------------------------------------------------------------------*/

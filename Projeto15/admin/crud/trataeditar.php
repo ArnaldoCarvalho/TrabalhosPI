@@ -1,5 +1,5 @@
 <?php
-include '../includes/config.inc.php';
+include '../../includes/config.inc.php';
 
 $str = '';
 foreach($arrDados['campos'] as $key => $value) {
@@ -18,10 +18,11 @@ foreach($arrDados['campos'] as $key => $value) {
     }
 
     if($flagEditarCampo) {
+        if($_POST[$key] != ''){
         $str .= $key.'=';
         if(!isset($_POST[$key])) $_POST[$key] = 0;
         if(isset($arrDados['campos'][$key]['geraHash'])) $_POST[$key] = password_hash($_POST[$key], PASSWORD_DEFAULT);
-        $str .= "'$_POST[$key]',";
+        $str .= "'$_POST[$key]',";}
     }
 }
 $str = substr($str,0,strlen($str)-1);
@@ -37,8 +38,9 @@ foreach($arrDados['campos'] as $key => $value) {
         }
     }
     if($flagChaveCampo) {
+        if($_POST[$key] != ''){
         $strChave .= $key.'=';
-        $strChave .= "'$_POST[$key]' AND ";
+        $strChave .= "'$_POST[$key]' AND ";}
     }
 }
 $strChave = substr($strChave,0,strlen($strChave)-5);
@@ -65,6 +67,6 @@ if($res) {
 }
 
 // problema na inserção
-header('location: '.$arrConfig['url_admin'].'/'.$arrDados['modulo'].'/?erro=2&m=edit');
+header('location: '.$arrConfig['url_admin'].'/'.$arrDados['modulo'].'/?erro=2&m=edit&id='.$_GET['id']);
 exit();
 ?>

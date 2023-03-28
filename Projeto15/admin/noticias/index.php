@@ -1,5 +1,5 @@
 <?php
-include '../includes/config.inc.php';
+include '../../includes/config.inc.php';
 include 'config.php';
 
 $operacao = $_GET['m'];

@@ -28,6 +28,11 @@ $arrDados = array(
                 'maxlength' => 100,
                 'notlist' => 1
             ),
+            'imgurl' => array (
+                'legenda' => 'Imagem Url',
+                'tipo' => 'textbox',
+                'maxlength' => 100
+            ),
             'ativo' => array (
                 'legenda' => 'Ativo',
                 'tipo' => 'checkbox',

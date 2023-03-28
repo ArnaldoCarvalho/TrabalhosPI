@@ -1,5 +1,5 @@
 <?php
-include('../includes/config.inc.php');
+include('../../includes/config.inc.php');
 @session_start();
 
 $strChave = '';
@@ -88,7 +88,7 @@ $res = my_query($sql);
                 <div>&nbsp;</div>
 
                 <table>
-                  <form method="post" action=<?php echo $arrConfig['url_admin']."/".$arrDados['modulo']."/?m=trataedit"?>>
+                  <form method="post" action=<?php echo $arrConfig['url_admin']."/".$arrDados['modulo']."/?m=trataedit&id=$_GET[id]" ?>>
 
                     <?php
                     foreach ($arrDados['campos'] as $key => $value) {

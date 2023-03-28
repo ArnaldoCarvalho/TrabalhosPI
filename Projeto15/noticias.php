@@ -6,9 +6,7 @@ if(!isset($_SESSION['username'])){
   $_SESSION['username'] = ' ';
   $_SESSION['SessionType'] = 'default';
 }
-
 ?>
-
 <!DOCTYPE html>
 <!--
 Template Name: Fertile
@@ -19,7 +17,7 @@ Licence URI: https://www.os-templates.com/template-terms
 -->
 <html>
 <head>
-<title>AirTenis</title>
+<title>Fertile | Pages | Gallery</title>
 <meta charset="utf-8">
 <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
 </head>
@@ -29,24 +27,28 @@ Licence URI: https://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <div class="wrapper row0 fixed">
   <header id="header" class="clear"> 
-    <!-- ################################################################################################ -->
-      <?php
+    <?php
       include($arrConfig['dir_site'].'/includes/menu.inc.php');
       menu();
-      ?>
-    <!-- ################################################################################################ -->
+    ?> 
   </header>
 </div>
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="wrapper row0 bgded" style="background-image:url('<?php echo $arrConfig['url_site'].'/images/home/Home.png' ?>')">
-    <img src="" alt="">
-    <div class="shout"> 
+<div class="wrapper row2 bgded" style="background-image:url('images/demo/backgrounds/2.png');">
+  <div id="pageintro"> 
     <!-- ################################################################################################ -->
-    <div class="shout-content clear">
-      <p class="fl_left">Seja Bem vindo Ao AirTenis faça login para ter uma melhor experiência</p>
-      <p class="fl_right"><a class="btn" href="<?php echo $arrConfig['url_site'].'/forms/login.php'?>">Login</a></p>
+    <div class="title">
+      <h2>Gallery</h2>
+    </div>
+    <div id="breadcrumb" class="clear">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Lorem</a></li>
+        <li><a href="#">Ipsum</a></li>
+        <li><a href="#">Dolor</a></li>
+      </ul>
     </div>
     <!-- ################################################################################################ -->
   </div>
@@ -58,25 +60,44 @@ Licence URI: https://www.os-templates.com/template-terms
   <main class="container clear"> 
     <!-- container body -->
     <!-- ################################################################################################ -->
-    <div class="group center">
-      <h2 class="font_xxl btmspace-80">O que vai encontrar neste site</h2>
-      
-      <div class="one_third first">
-        <div class="boxedicon"><a class="circle" href="<?php echo $arrConfig['url_site'].'/about.php?n=abouttenis'?>"><i class="fa fa-area-chart fa-2x"></i></a></div>
-        <h2 class="nospace push15">What is Tenis</h2>
-        <p>Nesta página vai ficar a saber o que é o ténis e como surgio.</p>
-      </div>
-      <div class="one_third">
-        <div class="boxedicon"><a class="circle" href="<?php echo $arrConfig['url_site'].'/about.php?n=aboutus'?>"><i class="fa fa-gift fa-2x"></i></a></div>
-        <h2 class="nospace push15">About Us</h2>
-        <p>Nesta página ficará a saber quem somos e o nosso objetivo</p>
-      </div>
-      <div class="one_third">
-        <div class="boxedicon"><a class="circle" href="<?php echo $arrConfig['url_site'].'/noticias.php'?>"><i class="fa fa-history fa-2x"></i></a></div>
-        <h2 class="nospace push15">Tenis News</h2>
-        <p>Aqui poderá encontrar notícias acerca do ténis</p>
-      </div>
+    <div id="gallery">
+      <figure class="overlay">
+        <header class="heading">Gallery Title Goes Here</header>
+        <ul class="nospace clear">
+          <li class="one_quarter first"><a href="#"><img src="images/demo/gallery/1.png" alt=""></a></li>
+          <li class="one_quarter"><a href="#"><img src="images/demo/gallery/1.png" alt=""></a></li>
+          <li class="one_quarter"><a href="#"><img src="images/demo/gallery/1.png" alt=""></a></li>
+          <li class="one_quarter"><a href="#"><img src="images/demo/gallery/1.png" alt=""></a></li>
+          <li class="one_quarter first"><a href="#"><img src="images/demo/gallery/1.png" alt=""></a></li>
+          <li class="one_quarter"><a href="#"><img src="images/demo/gallery/1.png" alt=""></a></li>
+          <li class="one_quarter"><a href="#"><img src="images/demo/gallery/1.png" alt=""></a></li>
+          <li class="one_quarter"><a href="#"><img src="images/demo/gallery/1.png" alt=""></a></li>
+          <li class="one_quarter first"><a href="#"><img src="images/demo/gallery/1.png" alt=""></a></li>
+          <li class="one_quarter"><a href="#"><img src="images/demo/gallery/1.png" alt=""></a></li>
+          <li class="one_quarter"><a href="#"><img src="images/demo/gallery/1.png" alt=""></a></li>
+          <li class="one_quarter"><a href="#"><img src="images/demo/gallery/1.png" alt=""></a></li>
+        </ul>
+        <figcaption>Gallery Description Goes Here</figcaption>
+      </figure>
     </div>
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+    <nav class="pagination">
+      <ul>
+        <li><a href="#">&laquo; Previous</a></li>
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><strong>&hellip;</strong></li>
+        <li><a href="#">6</a></li>
+        <li class="current"><strong>7</strong></li>
+        <li><a href="#">8</a></li>
+        <li><a href="#">9</a></li>
+        <li><strong>&hellip;</strong></li>
+        <li><a href="#">14</a></li>
+        <li><a href="#">15</a></li>
+        <li><a href="#">Next &raquo;</a></li>
+      </ul>
+    </nav>
     <!-- ################################################################################################ -->
     <!-- / container body -->
     <div class="clear"></div>
@@ -85,44 +106,25 @@ Licence URI: https://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="wrapper">
-  <figure class="latest overlay"> 
+<div class="wrapper row4">
+  <figure class="clients"> 
     <!-- ################################################################################################ -->
     <ul class="clear">
-      <?php
-      NewsHome();
-      ?>
+      <li><a href="#"><img src="../images/demo/logos/1.png" alt=""></a></li>
+      <li><a href="#"><img src="../images/demo/logos/2.png" alt=""></a></li>
+      <li><a href="#"><img src="../images/demo/logos/1.png" alt=""></a></li>
+      <li><a href="#"><img src="../images/demo/logos/2.png" alt=""></a></li>
+      <li><a href="#"><img src="../images/demo/logos/1.png" alt=""></a></li>
     </ul>
     <!-- ################################################################################################ -->
   </figure>
 </div>
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<div class="wrapper row3">
-  <section class="container clear"> 
-    <!-- container body -->
-    <!-- ################################################################################################ -->
-    <div class="group">
-      <h2 class="font_xxl center btmspace-80">Administradores -> Havendo problemas contactar</h2>
-      <?php
-      Admin();
-      ?>
-    </div>
-    <!-- ################################################################################################ -->
-    <!-- / container body -->
-    <div class="clear"></div>
-  </section>
-</div>
-<!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <div class="wrapper row5">
   <?php
   include($arrConfig['dir_site'].'/includes/footer.inc.php')
   ?>
 </div>
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <div class="wrapper row6">
   <div id="copyright" class="clear"> 
@@ -136,7 +138,7 @@ Licence URI: https://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a> 
-<script src="layout/scripts/jquery.min.js"></script>
-<script src="layout/scripts/jquery.backtotop.js"></script>
+<script src="../layout/scripts/jquery.min.js"></script>
+<script src="../layout/scripts/jquery.backtotop.js"></script>
 </body>
 </html>

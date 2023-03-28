@@ -1,9 +1,9 @@
 <?php
 $arrDados = array(
 
-    'tabela' => 'administradores',
-    'legenda_modulo' => 'Aministradores',
-    'modulo' => 'administradores',
+    'tabela' => 'user',
+    'legenda_modulo' => 'Users',
+    'modulo' => 'user',
     //'tabela_idiomas' => 'administradores_linguas',
     
     'campos' => array(
@@ -16,6 +16,11 @@ $arrDados = array(
             ),
             'nome' => array (
                 'legenda' => 'Nome',
+                'tipo' => 'textbox',
+                'maxlength' => 100
+            ),
+            'username' => array (
+                'legenda' => 'Username',
                 'tipo' => 'textbox',
                 'maxlength' => 100
             ),

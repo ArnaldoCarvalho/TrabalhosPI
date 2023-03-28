@@ -58,24 +58,41 @@ Licence URI: https://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <div class="wrapper row3">
   <main class="container clear"> 
-  <?php
+    <?php
 
 include './includes/config.inc.php';
 @session_start();
-$sql = "SELECT * FROM about WHERE pai = $_GET[n]";
+$sql = "SELECT * FROM noticias WHERE id = $_GET[id]";
 $results = my_query($sql);
 
 if ($results != 0) {
   foreach ($results as $Key => $Value) {
     echo '<h1> - ' . $results[$Key]['titulo'] . '</h1>';
-    echo '<img class="imgr borderedbox inspace-5" src=' . $arrConfig['url_site'] . $results[$Key]['img'] . ' alt="">';
-    echo '<p> ->'. $results[$Key]['name'] .'</p>';
+    echo '<img class="imgr borderedbox inspace-5" src=' . $arrConfig['url_site'] . $results[$Key]['imgurl'] . ' alt="">';
     echo '<p>'. $results[$Key]['texto'] .'</p>';
+    echo '<h6> - Resumo </h6>';
+    echo '<p>'. $results[$Key]['resumo'] .'</p>';
   }
 }
 
 ?>
- </main>
+  </main>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row4">
+  <figure class="clients"> 
+    <!-- ################################################################################################ -->
+    <ul class="clear">
+      <li><a href="#"><img src="../images/demo/logos/1.png" alt=""></a></li>
+      <li><a href="#"><img src="../images/demo/logos/2.png" alt=""></a></li>
+      <li><a href="#"><img src="../images/demo/logos/1.png" alt=""></a></li>
+      <li><a href="#"><img src="../images/demo/logos/2.png" alt=""></a></li>
+      <li><a href="#"><img src="../images/demo/logos/1.png" alt=""></a></li>
+    </ul>
+    <!-- ################################################################################################ -->
+  </figure>
 </div>
 <!-- ################################################################################################ -->
 <div class="wrapper row5">

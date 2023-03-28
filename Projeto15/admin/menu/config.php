@@ -1,10 +1,9 @@
 <?php
 $arrDados = array(
 
-    'tabela' => 'administradores',
-    'legenda_modulo' => 'Aministradores',
-    'modulo' => 'administradores',
-    //'tabela_idiomas' => 'administradores_linguas',
+    'tabela' => 'menu',
+    'legenda_modulo' => 'Menu',
+    'modulo' => 'menu',
     
     'campos' => array(
             'id' => array (
@@ -19,22 +18,15 @@ $arrDados = array(
                 'tipo' => 'textbox',
                 'maxlength' => 100
             ),
-            'email' => array (
-                'legenda' => 'Email',
-                'tipo' => 'textarea',
-                'maxlength' => 100
-            ),
-            'img' => array (
-                'legenda' => 'Imagem Url',
+            'url' => array (
+                'legenda' => 'Url',
                 'tipo' => 'textbox',
                 'maxlength' => 100
             ),
-            'pass' => array (
-                'legenda' => 'Palavra-passe',
-                'tipo' => 'password',
-                'maxlength' => 0,
-                'listagem' => 0,
-                'geraHash' => 1
+            'pai' => array (
+                'legenda' => 'Pai',
+                'tipo' => 'textbox',
+                'maxlength' => 5,
             ),
             'ativo' => array (
                 'legenda' => 'Ativo',

@@ -1,5 +1,5 @@
 <?php
-include('../includes/config.inc.php');
+include('../../includes/config.inc.php');
 @session_start();
 
 $sql = "SELECT * FROM administradores WHERE email = '".$_POST['email']."' and ativo = 1" ;
@@ -16,6 +16,7 @@ else{
         $_SESSION['user'] = $_POST['email'];
         $_SESSION['pass'] = $_POST['pass'];
         $_SESSION['auth'] = '1';
+        $_SESSION['img'] = $K['img'];
         header('Location: ' .$arrConfig['url_admin'] . '/index.php');
     }
     else{
