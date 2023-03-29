@@ -1,4 +1,4 @@
-<?php include('C:/xampp/htdocs/TrabalhosPi/Projeto15/includes/config.inc.php'); @session_start();?>
+<?php include('C:/xampp/htdocs/GitHub/Projeto15/includes/config.inc.php'); @session_start();?>
 
       <!-- partial:partials/_navbar.html -->
       <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">

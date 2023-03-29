@@ -15,12 +15,12 @@ $arrDados = array(
             'titulo' => array (
                 'legenda' => 'Título',
                 'tipo' => 'textbox',
-                'maxlength' => 50
+                'maxlength' => 25
             ),
             'resumo' => array (
                 'legenda' => 'Resumo',
                 'tipo' => 'textbox',
-                'maxlength' => 50
+                'maxlength' => 35
             ),
             'texto' => array (
                 'legenda' => 'Texto',

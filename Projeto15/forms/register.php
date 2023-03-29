@@ -28,6 +28,10 @@ include('../includes/config.inc.php');
                   <div class="form-group">
                     <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password" name="pass" required>
                   </div>
+                  <div class="form-group">
+                    <label for="">Foto:</label>
+                    <input type="file" name="Foto" required ><br><br>
+                  </div>
                   <div class="mb-4">
                     <div class="form-check">
                       <label class="form-check-label text-muted">

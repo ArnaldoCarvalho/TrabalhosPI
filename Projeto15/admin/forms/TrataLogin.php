@@ -12,10 +12,12 @@ else{
     foreach($results as $K)
     if(password_verify($_POST['pass'],$K['pass'])){
         $_SESSION['nome'] = $K['nome'];
+        $_SESSION['username'] = $K['nome'];
         $_SESSION['uid'] = $K['id'];
         $_SESSION['user'] = $_POST['email'];
         $_SESSION['pass'] = $_POST['pass'];
         $_SESSION['auth'] = '1';
+        $_SESSION['SessionType'] = 'Login';
         $_SESSION['img'] = $K['img'];
         header('Location: ' .$arrConfig['url_admin'] . '/index.php');
     }
