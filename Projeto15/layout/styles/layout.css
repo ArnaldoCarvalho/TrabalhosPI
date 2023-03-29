@@ -58,7 +58,7 @@ File: Layout CSS
 .latest ul li:first-child{border-left:none;}
 .latest ul li:first-child, .latest ul li:nth-child(5n+1){clear:left;}
 .latest ul li *{width:100%; box-sizing:border-box;}
-.latest ul li img{ max-height: 260px;}
+.latest ul li img{ height: 260px;}
 
 /* Clients
 ---------------------------------------------------------------------------------------------------------------*/

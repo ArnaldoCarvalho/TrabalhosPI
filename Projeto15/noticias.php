@@ -58,7 +58,7 @@ Licence URI: https://www.os-templates.com/template-terms
     <!-- container body -->
     <!-- ################################################################################################ -->
     <div id="gallery">
-      <figure class="overlay">
+      <figure class="latest noticia overlay">
         <header class="heading">Notícias</header>
         <ul class="nospace clear">
           <?php
@@ -109,17 +109,7 @@ Licence URI: https://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <div class="wrapper row4">
-  <figure class="clients"> 
-    <!-- ################################################################################################ -->
-    <ul class="clear">
-      <li><a href="#"><img src="../images/demo/logos/1.png" alt=""></a></li>
-      <li><a href="#"><img src="../images/demo/logos/2.png" alt=""></a></li>
-      <li><a href="#"><img src="../images/demo/logos/1.png" alt=""></a></li>
-      <li><a href="#"><img src="../images/demo/logos/2.png" alt=""></a></li>
-      <li><a href="#"><img src="../images/demo/logos/1.png" alt=""></a></li>
-    </ul>
-    <!-- ################################################################################################ -->
-  </figure>
+ 
 </div>
 <!-- ################################################################################################ -->
 <div class="wrapper row5">

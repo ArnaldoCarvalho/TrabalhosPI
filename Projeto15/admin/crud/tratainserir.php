@@ -35,6 +35,15 @@ if(count($res)) {
 }
 */
 
+$filedados = index($_FILES);
+if($arrDados['modulo']=='administradores'){
+if($_FILES['Foto']['name'] != '' ){
+$str = $str.',img="'.uploadFile($_FILES[$filedados[0]]).'"';}
+}else{
+    if($_FILES['Foto']['name'] != '' ){
+        $str = $str.',imgurl="'.uploadFile($_FILES[$filedados[0]]).'"';}
+}
+
 // tentar inserir o novo user
 $sql = "INSERT INTO $arrDados[tabela] ($str1) VALUES ($str2)";
 

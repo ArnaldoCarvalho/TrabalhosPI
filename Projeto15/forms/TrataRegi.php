@@ -11,10 +11,18 @@ if(count($results)!=0){
     header('Location: ' .$arrConfig['url_site'] . '/forms/register.php?Erro=1');
     exit;
 }
+
 $filedados = index($_FILES);
-$_SESSION['img']=uploadFile($_FILES[$filedados[0]]);
+if($_FILES['Foto']['name'] != '' )
+{
+    $filedados = index($_FILES);
+    $_SESSION['img']=uploadFile($_FILES[$filedados[0]]);
+    $sql = "INSERT INTO user (nome, email, pass, ativo, img) VALUES ('".$_POST['nome']."','".$_POST['email']."','".$pass."', '1','".$_SESSION['img']."') ";
+}else{
+    $sql = "INSERT INTO user (nome, email, pass, ativo) VALUES ('".$_POST['nome']."','".$_POST['email']."','".$pass."', '1') ";
+}
+
 $pass = password_hash($pass,PASSWORD_DEFAULT);
-$sql = "INSERT INTO user (nome, email, pass, ativo, img) VALUES ('".$_POST['nome']."','".$_POST['email']."','".$pass."', '1','".$_SESSION['img']."') ";
 my_query($sql);
 
 $_SESSION['username'] = $K['nome'];

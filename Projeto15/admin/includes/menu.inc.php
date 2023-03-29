@@ -224,7 +224,7 @@
                   <div>
                     <div class="d-flex align-items-center">
                       <div class="sidebar-profile-img">
-                        <img  class="img-avatar img-avatar48 img-avatar-thumb" src="<?php echo $arrConfig['url_site'].$_SESSION['img']?>" alt="image">
+                        <img  class="img-avatar img-avatar32 " src="<?php echo $arrConfig['url_site'].$_SESSION['img']?>" alt="image">
                       </div>
                       <div class="sidebar-profile-text">
                         <p class="mb-1"><?php echo $_SESSION['nome'] ?></p>
