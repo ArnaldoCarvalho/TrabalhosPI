@@ -3217,7 +3217,20 @@ pre {
     margin-left: 83.33333%; }
   .offset-xl-11 {
     margin-left: 91.66667%; } }
+.table2{
+  width: 100%;
+ 
+}
+.table2 tr{
+  border: 2px solid rgba(151, 151, 151, 0.3); }
 
+.table2 tr td,th{
+  border: 2px solid rgba(151, 151, 151, 0.3);
+  max-width: 50px;
+  padding: 5x;
+  text-align: center;
+  vertical-align: middle;
+}
 .table {
   width: 100%;
   margin-bottom: 1rem;

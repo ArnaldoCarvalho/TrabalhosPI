@@ -84,7 +84,7 @@ function NewsHome(){
                     foreach ($results as $Key => $Value) {
                         if ($count <=3) {
                             if($count!=1){
-                                echo '<li><a href="#"><img classe="img" src="' . $arrConfig['url_site'] .'/images/demo/latest/1.png" alt=""></a><br><br><br></li>';
+                                echo '<li><a href="#"><img classe="img" src="' . $arrConfig['url_site'] .'/images/home/Nnoticias.png" alt=""></a><br><br><br></li>';
                                 echo '<li><a href="' . $arrConfig['url_site'] . '/NoticiaPage.php?id='.$results[$Key]['id'].'"><img classe="img" src="' . $arrConfig['url_site'] .'/'.$results[$Key]['imgurl'].'" alt=""></a><br><div><p>';
                                 if (strlen($results[$Key]['titulo']) >= 20){
                                     echo substr($results[$Key]['titulo'], 0, 20) . '...';

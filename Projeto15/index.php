@@ -56,12 +56,12 @@ Licence URI: https://www.os-templates.com/template-terms
       <h2 class="font_xxl btmspace-80">O que vai encontrar neste site</h2>
       
       <div class="one_third first">
-        <div class="boxedicon"><a class="circle" href="<?php echo $arrConfig['url_site'].'/about.php?n=abouttenis'?>"><i class="fa fa-area-chart fa-2x"></i></a></div>
+        <div class="boxedicon"><a class="circle" href="<?php echo $arrConfig['url_site'].'/about.php?n=1'?>"><i class="fa fa-area-chart fa-2x"></i></a></div>
         <h2 class="nospace push15">What is Tenis</h2>
         <p>Nesta página vai ficar a saber o que é o ténis e como surgio.</p>
       </div>
       <div class="one_third">
-        <div class="boxedicon"><a class="circle" href="<?php echo $arrConfig['url_site'].'/about.php?n=aboutus'?>"><i class="fa fa-gift fa-2x"></i></a></div>
+        <div class="boxedicon"><a class="circle" href="<?php echo $arrConfig['url_site'].'/about.php?n=2'?>"><i class="fa fa-gift fa-2x"></i></a></div>
         <h2 class="nospace push15">About Us</h2>
         <p>Nesta página ficará a saber quem somos e o nosso objetivo</p>
       </div>

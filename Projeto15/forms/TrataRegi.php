@@ -30,7 +30,9 @@ $_SESSION['uid'] = $K['id'];
 $_SESSION['user'] = $_POST['email'];
 $_SESSION['pass'] = $_POST['pass'];
 $_SESSION['auth'] = '0';
-$_SESSION['SessionType'] = 'Login';
+$_SESSION['SessionType'] = 'Membro';
+
+
 
 header('Location: ' . $arrConfig['url_site'] . '/index.php');
 

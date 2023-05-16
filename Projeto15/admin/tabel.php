@@ -96,7 +96,7 @@ $strChave = substr($strChave,0,strlen($strChave)-1);
             <div class="card">
               <div class="card-body">
                 <div class="listagem">
-                  <table class="table">
+                  <table class="table2">
                   <h1>Listagem "<?php echo $arrDados['legenda_modulo']; ?>"</h1>
 
                   <div>
@@ -151,13 +151,15 @@ $strChave = substr($strChave,0,strlen($strChave)-1);
                           }
 
                           if ($flagMostraCampo) {
-                            if (strlen($v[$key2]) > $arrDados['campos'][$key2]['maxlength'] && isset($arrDados['campos'][$key2]['maxlength'])) $v[$key2] = substr($v[$key2], 0, $arrDados['campos'][$key2]['maxlength']) . '...';
+                            if(isset($arrDados['campos'][$key2]['maxlength'])){
+                              if (strlen($v[$key2]) > $arrDados['campos'][$key2]['maxlength'] && isset($arrDados['campos'][$key2]['maxlength'])) $v[$key2] = substr($v[$key2], 0, $arrDados['campos'][$key2]['maxlength']) . '...';
+                            }
                             echo '<td>' . $v[$key2] . '</td>';
                           }
                         }
                         ?>
-                        <td><a href="<?php echo $linkEditar; ?>">X</a></td>
-                        <td><a href="<?php echo $linkEliminar; ?>">X</a></td>
+                        <td><a class="editar" href="<?php echo $linkEditar; ?>">✏️</a></td>
+                        <td><a class="eliminar" href="<?php echo $linkEliminar; ?>">X</a></td>
                       </tr>
                     <?php
                     }

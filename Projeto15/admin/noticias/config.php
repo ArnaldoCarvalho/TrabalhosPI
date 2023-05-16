@@ -8,19 +8,18 @@ $arrDados = array(
             'id' => array (
                 'legenda' => 'ID',
                 'tipo' => 'textbox',
-                'maxlength' => 5,
                 'chave' => 1,
                 'inserir' => 0
             ),
             'titulo' => array (
                 'legenda' => 'Título',
                 'tipo' => 'textbox',
-                'maxlength' => 25
+                'maxlength' => 50
             ),
             'resumo' => array (
                 'legenda' => 'Resumo',
                 'tipo' => 'textbox',
-                'maxlength' => 35
+                'maxlength' => 100
             ),
             'texto' => array (
                 'legenda' => 'Texto',
@@ -31,13 +30,15 @@ $arrDados = array(
             'imgurl' => array (
                 'legenda' => 'Imagem Url',
                 'tipo' => 'file',
-                'maxlength' => 100
             ),
             'ativo' => array (
                 'legenda' => 'Ativo',
                 'tipo' => 'checkbox',
-                'maxlength' => 1,
-                'defeito' => 1
+                'defeito' => 1,
+                'opcoes' => array(
+                    '0' => 'Inativo',
+                    '1' => 'Ativo'
+                 ),
             )
     )
 );
